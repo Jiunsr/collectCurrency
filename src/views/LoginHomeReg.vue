@@ -1,48 +1,5 @@
 <template>
-	<div class="center">
-		<div class="head">
-			<div class="logo">
-				<img src="../assets/img/shouye_03.png" alt="">
-			</div>
-			<div class="label">
-				<v-tabs
-					height="80" slider-size="4"
-					background-color="deep-purple accent-4"
-					v-model="tabsState"
-					active-class="tabsActive"
-				>
-					<v-tabs-slider color="#4f6ef7"></v-tabs-slider>
-					<v-tab>
-						<div class="minw-100">首页</div>
-					</v-tab>
-					<v-tab>
-						<div class="minw-100">产品价格</div>
-					</v-tab>
-					<v-tab>
-						<div class="minw-100">开发者文档</div>
-					</v-tab>
-					<v-tab>
-						<div class="minw-100">帮助中心</div>
-					</v-tab>
-
-				</v-tabs>
-			</div>
-			<div class="download">
-				<span>钱包下载</span>
-				<img src="../assets/img/shouye_06.png" alt="">
-			</div>
-			<v-btn
-				color="#4f6ef7"
-				class="white--text"
-				style="margin-left:30px;"
-			>
-				登录
-			</v-btn>
-			<v-btn style="color:#4f6ef7!important;border:1px solid #4f6ef7;" >
-				注册
-			</v-btn>
-			
-		</div>
+	<div class="rge">
 		
 		<div class="logIn">
 			<div class="logInCenter">
@@ -102,26 +59,23 @@
 				</div>
 			</div>
 		</div>
-
-	<div class="bottom">
-		<div class="bottomCenter">
-			<div class="bottomImg">
-				<img src="../assets/img/shouyeioc_03.jpg" alt="">
-			</div>
-			<div class="bottomImg">
-				<img src="../assets/img/shouyeioc_05.jpg" alt="">
-			</div>
-			<div class="bottomImg">
-				<img src="../assets/img/shouyeioc_07.jpg" alt="">
-			</div>
-		</div>
-		<div class="siteName">
-			<div>© 2020 shoubibao.com</div>
-		</div>
+        <div class="bottom">
+            <div class="bottomCenter">
+                <div class="bottomImg">
+                    <img src="./../assets/img/shouyeioc_03.jpg" alt="">
+                </div>
+                <div class="bottomImg">
+                    <img src="./../assets/img/shouyeioc_05.jpg" alt="">
+                </div>
+                <div class="bottomImg">
+                    <img src="./../assets/img/shouyeioc_07.jpg" alt="">
+                </div>
+            </div>
+            <div class="siteName">
+                <p>© 2020 shoubibao.com</p>
+            </div>
+        </div>
 	</div>
-</div>
-
-
 </template>
 
 <script>
@@ -192,7 +146,7 @@ export default {
 	color #000
 	font-weight bold
 }
-.center{
+.rge{
 	font-family: Arial, Helvetica, sans-serif;
 	.head{
 		padding 0 5%
@@ -251,7 +205,7 @@ export default {
 			.logInText{
 				width 520px;
 				box-shadow 0 4px 10px #e5e5e5;
-				margin 133px 0 240px 0;
+				margin 70px 0 0 0;
 				.accounts{
 					font-size 30px;
 					letter-spacing 3px;
@@ -278,26 +232,29 @@ export default {
 	}
 
 	.bottom{
-		height 70px;
-		background-color #000829;
+		position fixed
+		width 100%
+		bottom 0
+		left 0
+		background-color: #000829;
 		.bottomCenter{
-			display flex;
-			justify-content center;
-			align-items center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			.bottomImg{
-				padding 15px 10px 3px 0;
+				padding: 15px 5px 5px;
+				display flex
 				img{
-					width 27px;
-					height 27px;
+					width: 27px;
+					height: 27px;
 				}
 			}
 		}
 		.siteName{
-			text-align center;
-			p{
-				font-size 12px;
-				color #fff;
-			}
+			text-align: center;
+			font-size: 12px;
+			color: #fff;
+			padding-bottom 3px
 		}
 	}
 }

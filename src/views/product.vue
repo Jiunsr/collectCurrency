@@ -2,39 +2,39 @@
     <div class="product">
         <div class="productPrice">
             <div class="buyText">
-                <p class="text1">按需购买，更加弹性可控</p>
-                <p class="text2">根据需要购买地址数量，以及地址监听时长</p>
+                <div class="text1">按需购买，更加弹性可控</div>
+                <div class="text2">根据需要购买地址数量，以及地址监听时长</div>
             </div>
             <div class="product">
                 <div class="productCenter">
                     <div class="productImg1">
                         <img src="./../assets/img/cpxz_11.png" alt="">
                     </div>
-                    <p class="productText1">核心</p>
-                    <p class="productText2">$<span style="font-size: 40px; font-weight: bold;">0</span>.00/月</p>
+                    <div class="productText1">核心</div>
+                    <div class="productText2">$<span style="font-size: 40px; font-weight: bold;">0</span>.00/月</div>
                     <div class="line0"></div>
                     <div class="productSelect">
                         <div class="productImg2">
                             <img src="./../assets/img/cpxz_21.png" alt="">
-                            <p class="productText3">以太坊主网和测试网</p>
+                            <div class="productText3">以太坊主网和测试网</div>
                         </div>
                     </div>
                     <div class="productSelect">
                         <div class="productImg2">
                             <img src="./../assets/img/cpxz_21.png" alt="">
-                            <p class="productText3">100,000个请求/天</p>
+                            <div class="productText3">100,000个请求/天</div>
                         </div>
                     </div>
                     <div class="productSelect">
                         <div class="productImg2">
                             <img src="./../assets/img/cpxz_21.png" alt="">
-                            <p class="productText3">3个项目</p>
+                            <div class="productText3">3个项目</div>
                         </div>
                     </div>
                     <div class="productSelect">
                         <div class="productImg2">
                             <img src="./../assets/img/cpxz_21.png" alt="">
-                            <p class="productText3">社区支持论坛</p>
+                            <div class="productText3">社区支持论坛</div>
                         </div>
                     </div>
                 </div>
@@ -42,31 +42,31 @@
                     <div class="productImg1">
                         <img src="./../assets/img/cpxz_13.png" alt="">
                     </div>
-                    <p class="productText1">开发人员</p>
-                    <p class="productText2">$<span style="font-size: 40px; font-weight: bold;">50</span>.00/月</p>
+                    <div class="productText1">开发人员</div>
+                    <div class="productText2">$<span style="font-size: 40px; font-weight: bold;">50</span>.00/月</div>
                     <div class="line0"></div>
                     <div class="productSelect">
                         <div class="productImg2">
                             <img src="./../assets/img/cpxz_21.png" alt="">
-                            <p class="productText3">所有核心层优势，再加上</p>
+                            <div class="productText3">所有核心层优势，再加上</div>
                         </div>
                     </div>
                     <div class="productSelect">
                         <div class="productImg2">
                             <img src="./../assets/img/cpxz_21.png" alt="">
-                            <p class="productText3">200，000个请求/天</p>
+                            <div class="productText3">200，000个请求/天</div>
                         </div>
                     </div>
                     <div class="productSelect">
                         <div class="productImg2">
                             <img src="./../assets/img/cpxz_21.png" alt="">
-                            <p class="productText3">10个项目</p>
+                            <div class="productText3">10个项目</div>
                         </div>
                     </div>
                     <div class="productSelect">
                         <div class="productImg2">
                             <img src="./../assets/img/cpxz_21.png" alt="">
-                            <p class="productText3">直接客户支持</p>
+                            <div class="productText3">直接客户支持</div>
                         </div>
                     </div>
                 </div>
@@ -74,35 +74,49 @@
                     <div class="productImg1">
                         <img src="./../assets/img/cpxz_15.png" alt="">
                     </div>
-                    <p class="productText1">团队</p>
-                    <p class="productText2">$<span style="font-size: 40px; font-weight: bold;">255</span>.00/月</p>
+                    <div class="productText1">团队</div>
+                    <div class="productText2">$<span style="font-size: 40px; font-weight: bold;">255</span>.00/月</div>
                     <div class="line0"></div>
                     <div class="productSelect">
                         <div class="productImg2">
                             <img src="./../assets/img/cpxz_21.png" alt="">
-                            <p class="productText3">所有开发人员优势，再加上</p>
+                            <div class="productText3">所有开发人员优势，再加上</div>
                         </div>
                     </div>
                     <div class="productSelect">
                         <div class="productImg2">
                             <img src="./../assets/img/cpxz_21.png" alt="">
-                            <p class="productText3">1，000，000个请求/天</p>
+                            <div class="productText3">1，000，000个请求/天</div>
                         </div>
                     </div>
                     <div class="productSelect">
                         <div class="productImg2">
                             <img src="./../assets/img/cpxz_21.png" alt="">
-                            <p class="productText3">24小时支持响应时间</p>
+                            <div class="productText3">24小时支持响应时间</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="button">
-                <div class="buttonForm">
-                    <p class="buttonText">立即对接</p>
+                <v-btn slot="append" color="#4f6ef7" large="true" style="padding:12px 40px; font-size: 18px; font-weight: bold !important;">立即对接</v-btn>
+            </div>
+            <div class="buttonText1">没有您需要的功能？联系我们定制计划。</div>
+        </div>
+        <div class="bottom">
+            <div class="bottomCenter">
+                <div class="bottomImg">
+                    <img src="./../assets/img/shouyeioc_03.jpg" alt="">
+                </div>
+                <div class="bottomImg">
+                    <img src="./../assets/img/shouyeioc_05.jpg" alt="">
+                </div>
+                <div class="bottomImg">
+                    <img src="./../assets/img/shouyeioc_07.jpg" alt="">
                 </div>
             </div>
-            <p class="buttonText1">没有您需要的功能？联系我们定制计划。</p>
+            <div class="siteName">
+                <p>© 2020 shoubibao.com</p>
+            </div>
         </div>
     </div>
 </template>
@@ -125,13 +139,13 @@ export default {
         .buyText{
             text-align: center;
             .text1{
-                font-size: 36px;
-                padding: 90px 0 30px 0;
+                font-size: 32px;
+                padding: 70px 0 30px 0;
             }
             .text2{
                 font-size: 18;
                 letter-spacing: 7px;
-                padding-bottom: 50px;
+                padding-bottom: 40px;
             }
         }
         .product{
@@ -150,8 +164,8 @@ export default {
                     align-items: center;
                     padding: 30px 0 15px 0;
                     img{
-                        width: 90px;
-                        height: 90px;
+                        width: 80px;
+                        height: 80px;
                     }
                 }
                 .productText1{
@@ -193,28 +207,11 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
-            
-            .buttonForm{
-                width: 180px;
-                height: 50px;
-                background-color: #4f6ef7;
-                box-shadow: 0 4px 10px #cecece;
-                border-radius: 5px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 20px;
-                .buttonText{
-                    font-size: 20px;
-                    font-weight: bold;
-                    color: #fff;
-                }
-            }
         }
         .buttonText1{
             color: #4f6ef7;
             font-size: 18px;
-            padding-bottom: 63px;
+            padding: 20px 0 63px 0;
             text-align: center;
         }
     }

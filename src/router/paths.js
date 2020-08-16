@@ -79,15 +79,25 @@ export default [
         },
         component: () => import(`@/views/download.vue`),
       },
+      {
+        path: '/loginHomeReg',
+        name: 'loginHomeReg',
+        meta: {
+          name: '注册',
+          requiresAuth: false
+        },
+        component: () => import(`@/views/LoginHomeReg.vue`),
+      },
+      {
+        path: '/loginHome',
+        name: 'loginHome',
+        meta: {
+          name: '登录',
+          requiresAuth: false
+        },
+        component: () => import(`@/views/LoginHome.vue`),
+      },
     ]
-  },
-  {
-    path: '/LoginHomeReg',
-    meta: {
-      name: '注册',
-      requiresAuth: false
-    },
-    component: () => import(`@/views/LoginHomeReg.vue`),
   },
   // add any extra routes that you want rendered in the dashboard as a child below. Change toolbar names here
   {

@@ -37,14 +37,10 @@
 				<span>钱包下载</span>
 				<img src="../assets/img/shouye_06.png" alt="" :style="{filter:tabsState==4||tabsState=='/download'?'grayscale(0)':'grayscale(1)'}">
 			</div>
-			<v-btn
-				color="#4f6ef7"
-				class="white--text"
-				style="margin-left:30px;"
-			>
+			<v-btn color="#4f6ef7" class="white--text" style="margin-left:30px;" @click="goLogin">
 				登录
 			</v-btn>
-			<v-btn style="color:#4f6ef7!important;border:1px solid #4f6ef7;" @click="goReg">
+			<v-btn style="color:#4f6ef7!important;border:1px solid #4f6ef7; margin-left: 20px;" @click="goReg">
 				注册
 			</v-btn>
 			
@@ -134,7 +130,10 @@ export default {
   // Sends action to Vuex that will log you in and redirect to the dash otherwise, error
 	methods: {
 		goReg(){
-			this.$router.push({ path:'/LoginHomeReg' });
+			this.$router.push({ name:'loginHomeReg' });
+		},
+		goLogin(){
+			this.$router.push({ name:'loginHome' });
 		},
 		setDrawer(){
 			this.drawer = !this.drawer;
@@ -308,33 +307,6 @@ export default {
 					}
 				}
 			}
-		}
-	}
-
-	.bottom{
-		position fixed
-		width 100%
-		bottom 0
-		left 0
-		background-color: #000829;
-		.bottomCenter{
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			.bottomImg{
-				padding: 15px 5px 5px;
-				display flex
-				img{
-					width: 27px;
-					height: 27px;
-				}
-			}
-		}
-		.siteName{
-			text-align: center;
-			font-size: 12px;
-			color: #fff;
-			padding-bottom 3px
 		}
 	}
 }

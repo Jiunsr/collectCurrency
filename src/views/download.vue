@@ -37,6 +37,22 @@
                 </div>
             </div>
         </div>
+        <div class="bottom">
+            <div class="bottomCenter">
+                <div class="bottomImg">
+                    <img src="./../assets/img/shouyeioc_03.jpg" alt="">
+                </div>
+                <div class="bottomImg">
+                    <img src="./../assets/img/shouyeioc_05.jpg" alt="">
+                </div>
+                <div class="bottomImg">
+                    <img src="./../assets/img/shouyeioc_07.jpg" alt="">
+                </div>
+            </div>
+            <div class="siteName">
+                <p>© 2020 shoubibao.com</p>
+            </div>
+        </div>
     </div>
 </template>
 

@@ -1,146 +1,97 @@
 <template>
 	<div class="center">
-		<div class="head">
-			<div class="logo">
-				<img src="../assets/img/shouye_03.png" alt="">
-			</div>
-			<div class="label">
-				<v-tabs
-					class="cd-list"
-					height="80" slider-size="4"
-					background-color="deep-purple accent-4"
-					v-model="tabsState"
-					active-class="tabsActive"
-				>
-					<v-tabs-slider color="#4f6ef7"></v-tabs-slider>
-					<v-tab>
-						<div class="minw-100">首页</div>
-					</v-tab>
-					<v-tab>
-						<div class="minw-100">产品价格</div>
-					</v-tab>
-					<v-tab>
-						<div class="minw-100">开发者文档</div>
-					</v-tab>
-					<v-tab>
-						<div class="minw-100">帮助中心</div>
-					</v-tab>
-				</v-tabs>
-				<v-btn class="cd-more" color="#4f6ef7" @click="setDrawer">
-					<v-icon>{{mdiFormatListBulleted}}</v-icon>
-				</v-btn>
-			</div>
-			<div class="download">
-				<span>钱包下载</span>
-				<img src="../assets/img/shouye_06.png" alt="">
-			</div>
-			<v-btn
-				color="#4f6ef7"
-				class="white--text"
-				style="margin-left:30px;"
-			>
-				登录
-			</v-btn>
-			<v-btn style="color:#4f6ef7!important;border:1px solid #4f6ef7;" @click="goReg">
-				注册
-			</v-btn>
-			
-		</div>
-		
 		<div class="logIn">
 			<div class="logInCenter">
-			<div class="logInText">
-				<div class="accounts">登录账号</div>
-				<div class="information">	
-				<v-form v-model="valid">
-					<v-container style="padding:0;">
-					<v-row>
-						<v-col
-						cols="24"
-						md="12"
-						>
-						<v-text-field
-							v-model="phone"
-							:rules="phoneRules"
-							label="手机"
-							placeholder="请输入手机号"
-							required
-						></v-text-field>
-						</v-col>
+				<div class="logInText">
+					<div class="accounts">登录账号</div>
+					<div class="information">	
+					<v-form v-model="valid">
+						<v-container style="padding:0;">
+						<v-row>
+							<v-col
+							cols="24"
+							md="12"
+							>
+							<v-text-field
+								v-model="phone"
+								:rules="phoneRules"
+								label="手机"
+								placeholder="请输入手机号"
+								required
+							></v-text-field>
+							</v-col>
 
-						<v-col
-						cols="24"
-						md="12"
-						>
-						<v-text-field
-							v-model="pword"
-							:rules="pwRules"
-							label="密码"
-							placeholder="请输入密码"
-							required
-							class="mt-4"
-						></v-text-field>
-						</v-col>
-						<v-btn 
-							color="#4f6ef7" 
-							:block="true" :large="true" 
-							class="login-btn"
-							@click="submitLogin"
-						>登录</v-btn>
-					</v-row>
-					</v-container>
-					<div class="bookInformation">
-						<div class="thatLog">未注册？<a style="color:#4f6ef7; font-weight: bold;">立即注册</a></div>
-						<div class="forget">忘记密码?</div>
+							<v-col
+							cols="24"
+							md="12"
+							>
+							<v-text-field
+								v-model="pword"
+								:rules="pwRules"
+								label="密码"
+								placeholder="请输入密码"
+								required
+								class="mt-4"
+							></v-text-field>
+							</v-col>
+							<v-btn 
+								color="#4f6ef7" 
+								:block="true" :large="true" 
+								class="login-btn"
+								@click="submitLogin"
+							>登录</v-btn>
+						</v-row>
+						</v-container>
+						<div class="bookInformation">
+							<div class="thatLog">未注册？<a style="color:#4f6ef7; font-weight: bold;">立即注册</a></div>
+							<div class="forget">忘记密码?</div>
+						</div>
+					</v-form>
 					</div>
-				</v-form>
 				</div>
 			</div>
 		</div>
-	</div>
-	<v-navigation-drawer
-		v-model="drawer"
-		absolute
-		left
-		temporary
-	>
-		<v-list >
-			<v-list-item-group v-model="moreItem" color="primary">
-				<v-list-item
-					v-for="item in items"
-					:key="item.title"
-					link
-					@click="openMoreItem(item)"
-					:class="item.class||''"
-				>
-					<v-list-item-icon class="cd-more-mr">
-						<v-icon color="#4f6ef7">{{ item.icon }}</v-icon>
-					</v-list-item-icon>
+		<v-navigation-drawer
+			v-model="drawer"
+			absolute
+			left
+			temporary
+		>
+			<v-list>
+				<v-list-item-group v-model="moreItem" color="primary">
+					<v-list-item
+						v-for="item in items"
+						:key="item.title"
+						link
+						@click="openMoreItem(item)"
+						:class="item.class||''"
+					>
+						<v-list-item-icon class="cd-more-mr">
+							<v-icon color="#4f6ef7">{{ item.icon }}</v-icon>
+						</v-list-item-icon>
 
-					<v-list-item-content>
-						<v-list-item-title>{{ item.title }}</v-list-item-title>
-					</v-list-item-content>
-				</v-list-item>
-			</v-list-item-group>
-		</v-list>
-	</v-navigation-drawer>
-	<div class="bottom">
-		<div class="bottomCenter">
-			<div class="bottomImg">
-				<img src="../assets/img/shouyeioc_03.jpg" alt="">
+						<v-list-item-content>
+							<v-list-item-title>{{ item.title }}</v-list-item-title>
+						</v-list-item-content>
+					</v-list-item>
+				</v-list-item-group>
+			</v-list>
+		</v-navigation-drawer>
+		<div class="bottom">
+			<div class="bottomCenter">
+				<div class="bottomImg">
+					<img src="./../assets/img/shouyeioc_03.jpg" alt="">
+				</div>
+				<div class="bottomImg">
+					<img src="./../assets/img/shouyeioc_05.jpg" alt="">
+				</div>
+				<div class="bottomImg">
+					<img src="./../assets/img/shouyeioc_07.jpg" alt="">
+				</div>
 			</div>
-			<div class="bottomImg">
-				<img src="../assets/img/shouyeioc_05.jpg" alt="">
-			</div>
-			<div class="bottomImg">
-				<img src="../assets/img/shouyeioc_07.jpg" alt="">
-			</div>
+			<div class="siteName">© 2020 shoubibao.com</div>
 		</div>
-		<div class="siteName">© 2020 shoubibao.com</div>
 	</div>
-</div>
-
-
 </template>
 
 <script>
@@ -211,6 +162,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+html,body {
+	height 100%
+}
+.center{
+	height 100%
+}
 @media only screen and (max-width: 1264px){
 	.cd-list{
 		display none 
@@ -334,7 +291,7 @@ export default {
 				width: 520px;
 				// height: 550px;
 				box-shadow: 0 4px 10px #e5e5e5;
-				margin :133px 0 240px 0;
+				margin :70px 0 0 0;
 				.accounts{
 					font-size: 30px;
 					letter-spacing: 3px;
