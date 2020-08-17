@@ -8,7 +8,7 @@
                 <div class="text"><span style="font-size: 36px; font-weight: bold; color: #4f6ef7;">区块链数字资产时代</span> 已经到来</div>
                 <div class="text0">即可对接上区块链数字资产</div>
                 <div class="text1">我们提供数字资产的收取管理功能</div>
-                <v-btn slot="append" color="#4f6ef7" large="true" style="padding: 12px 30px !important; margin-left: 170px; font-size: 18px; font-weight: bold !important; height: 52px;">免费开始使用</v-btn>
+                <v-btn slot="append" color="#4f6ef7" :large="true" style="padding: 12px 30px !important; margin-left: 170px; font-size: 18px; font-weight: bold !important; height: 52px;">免费开始使用</v-btn>
             </div>
             <div class="bannerImg2">
                 <img src="./../assets/img/cpxz_03_03.jpg" alt="">

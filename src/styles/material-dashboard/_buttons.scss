@@ -1,6 +1,6 @@
 .v-btn {
   margin: $margin-small 1px;
-  padding: $padding-small + 2 $padding-general + 15!important;
+  padding: 0 $padding-general*2!important;
   font-size: $font-size-small;
   font-weight: $font-weight-base !important;
   height: auto;
