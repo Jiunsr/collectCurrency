@@ -20,7 +20,6 @@ export default [
   // This  allows you to have pages apart of the app but no rendered inside the dash
   {
     path: '/',
-    name: 'homeMain',
     meta: {
       name: '',
       requiresAuth: false

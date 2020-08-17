@@ -1,5 +1,5 @@
 <template>
-	<div class="center">
+	<div class="loginHome">
 		<div class="logIn">
 			<div class="logInCenter">
 				<div class="logInText">
@@ -151,7 +151,11 @@ export default {
 			let phone = this.phone;
 			let pword = this.pword;
 			let param = {phone, pword}
-			this.login(param);
+			this.login(param).then((result) => {
+				this.$router.push({ path:"/dashboard" });
+			}).catch((err) => {
+				console.warn(err);
+			});
 		},
 	},
 	metaInfo () {
@@ -225,9 +229,8 @@ html,body {
 	color #000
 	font-weight bold
 }
-.center{
+.loginHome{
 	font-family: Arial, Helvetica, sans-serif;
-	padding-top 80px
 	box-sizing border-box
 	.head{
 		position fixed

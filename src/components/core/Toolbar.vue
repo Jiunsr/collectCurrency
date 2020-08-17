@@ -4,7 +4,6 @@
   <v-toolbar
     id="core-toolbar"
     style="background: #fff;"
-    app
     flat
     prominent>
     <div class="v-toolbar-title">
