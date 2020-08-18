@@ -33,7 +33,7 @@
 										required
 										class="mt-4"
 									>
-									<v-btn slot="append" color="#4f6ef7">获取验证码</v-btn>
+									<v-btnt slo="append" color="#4f6ef7">获取验证码</v-btnt>
 									</v-text-field>
 									</v-col>
 									<v-col

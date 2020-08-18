@@ -98,7 +98,7 @@
                 </div>
             </div>
             <div class="button">
-                <v-btn slot="append" color="#4f6ef7" :large="true" style="padding:12px 40px; font-size: 18px; font-weight: bold !important;">立即对接</v-btn>
+                <v-btn slot="append" color="#4f6ef7" :large="true" style="padding:12px 40px; font-size: 18px; font-weight: bold !important; ">立即对接</v-btn>
             </div>
             <div class="buttonText1">没有您需要的功能？联系我们定制计划。</div>
         </div>
