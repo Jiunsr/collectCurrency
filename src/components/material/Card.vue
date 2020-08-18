@@ -1,4 +1,6 @@
-<template>
+<template
+  v-slot:activator="$listeners"
+>
   <v-card
     v-bind="$attrs"
     :style="styles"
@@ -38,7 +40,7 @@
       />
     </helper-offset>
 
-    <v-card-text>
+    <!-- <v-card-text>
       <slot />
     </v-card-text>
 
@@ -49,7 +51,7 @@
 
     <v-card-actions v-if="$slots.actions">
       <slot name="actions" />
-    </v-card-actions>
+    </v-card-actions> -->
   </v-card>
 </template>
 

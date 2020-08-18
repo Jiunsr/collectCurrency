@@ -6,7 +6,6 @@
     dark
     floating
     persistent
-    mobile-break-point="991"
     width="260"
     absolute
   >
@@ -20,11 +19,8 @@
         column
         :dark="false"
       >
-        <v-list-tile
-          avatar
-          style="background:#fff;"
-        >
-          <v-list-tile-avatar
+        <v-list style="background:#fff;">
+          <v-list-item-avatar
             color="grey"
           >
             <v-img
@@ -32,37 +28,20 @@
               height="64"
               contain
             />
-          </v-list-tile-avatar>
-          <v-list-tile-title class="title" style="color:#333;">
-            Vuetify Admin Dash
-          </v-list-tile-title>
-        </v-list-tile>
-
-        <v-divider/>
-        <v-list-tile
-          v-if="responsive"
-        >
-          <v-text-field
-            class="purple-input search-input"
-            label="Search..."
-            color="purple"
-          />
-        </v-list-tile>
-        <v-list-tile
+          </v-list-item-avatar>
+        </v-list>
+        <!-- <v-divider/> -->
+        <v-list-item
           v-for="(link, i) in links"
           :key="i"
           :to="link.to"
           :active-class="color"
-          avatar
-          class="v-list-item"
         >
-          <v-list-tile-action>
+          <v-list-item-action>
             <v-icon>{{ link.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title
-            v-text="link.text"
-          />
-        </v-list-tile>
+          </v-list-item-action>
+          <v-list-item-action-text v-text="link.text" />
+        </v-list-item>
       </v-layout>
     </v-img>
   </v-navigation-drawer>
@@ -138,10 +117,10 @@ export default {
   },
   mounted () {
     this.onResponsiveInverted()
-    window.addEventListener('resize', this.onResponsiveInverted)
+    // window.addEventListener('resize', this.onResponsiveInverted)
   },
   beforeDestroy () {
-    window.removeEventListener('resize', this.onResponsiveInverted)
+    // window.removeEventListener('resize', this.onResponsiveInverted)
   },
   methods: {
     ...mapMutations('app', ['setDrawer', 'toggleDrawer']),
