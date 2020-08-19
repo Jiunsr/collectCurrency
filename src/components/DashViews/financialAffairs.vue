@@ -4,19 +4,13 @@
     fluid
     grid-list-xl 
   >
-    <div class="page-title">
-      <div class="page-item">概况</div>
-      <div class="page-item">详情</div>
-    </div>
     <v-layout wrap>
-
       <v-flex
         md12
         sm12
-        lg6
-        class="pl-8 pr-0"
-      > 
-        <v-card class="mx-auto" height="288" :elevation="4" mar>
+        lg5
+      >  
+        <v-card class="mx-auto" height="288" max-width="96%" :elevation="4" mar>
           <div class="fiscalHappening">
             <div class="fiscalCenter">
               <div class="bg"></div>
@@ -27,13 +21,13 @@
               <div class="balance">
                 <div class="money">￥10000.00</div>
                 <div class="available">可用余额：</div>
-                <v-btn small color="#4f6ef7" height="30" width="90px" style="font-size:14px;">充值</v-btn>
+                <v-btn small color="#4f6ef7" height="30" width="30%" style="font-size:14px;">充值</v-btn>
               </div>
               <div class="line2"></div>
               <div class="balance">
                 <div class="money">1000</div>
                 <div class="available">可用地址数：</div>
-                <v-btn small color="#4f6ef7" height="30" width="90px" style="font-size:14px;">购买</v-btn>
+                <v-btn small color="#4f6ef7" height="30" width="30%" style="font-size:14px;">购买</v-btn>
               </div>
             </div>
           </div>
@@ -43,68 +37,53 @@
       <v-flex
         md12
         sm12
-        lg3
-        class="pl-8 pr-4"
+        lg5
       >  
         <v-card class="mx-auto" height="288" max-width="100%" :elevation="4">
           <div class="fiscalHappening">
             <div class="fiscalCenter">
               <div class="bg"></div>
-              <div class="fiscalText">待续费</div>
+              <div class="fiscalText">设置</div>
             </div>
             <div class="line"></div>
-            <div class="balanceBox">
-              <div class="balance">
-                <div class="money">100</div>
-                <div class="available">地址数量</div>
-              </div>
-              <div class="line2"></div>
-              <div class="balance">
-                <div class="money">110</div>
-                <div class="available">应用数量</div>
-              </div>
+            <div class="setUp">
+              <div class="setUpText">自动余额支付地址创建：</div>
+
             </div>
           </div>
-          <v-btn small color="#4f6ef7" height="30" width="80px" style="font-size:14px;display:block;margin:10px auto;">充值</v-btn>
         </v-card>
       </v-flex>
+
       <v-flex
         md12
         sm12
-        lg3
-        class="pr-8 pl-4"
-      >  
-        <v-card class="mx-auto" height="288" max-width="100%" :elevation="4">
+        lg2
+      >
+        <v-card
+          class="mx-auto"
+          height="288"
+          max-width="95%"
+          :elevation="4"
+        >
           <div class="fiscalHappening">
             <div class="fiscalCenter">
               <div class="bg"></div>
-              <div class="fiscalText">待出账</div>
+              <div class="fiscalText">订单管理</div>
             </div>
             <div class="line"></div>
-            <div class="balanceBox">
-              <div class="balance">
-                <div class="money">0</div>
-                <div class="available">待出账数量（笔）</div>
-                <v-btn small color="#4f6ef7" height="30" width="80px" style="font-size:14px;">处理</v-btn>
-              </div>
+            <div class="pushButton">
+              <v-btn large color="#4f6ef7" height="144" style="margin auto;">进入订单管理</v-btn>
             </div>
           </div>
         </v-card>
       </v-flex>
-
-      <v-flex
-        md12
-        sm12
-        lg12
-        class="pl-8 pr-8 pb-8 pt-0"
-      >  
-        <v-card class="mx-auto" height="400" max-width="100%" :elevation="4">
-
-        </v-card>
-      </v-flex>
-
-      <!-- <div class="record">
+      <div class="record">
         <div class="recordCenter">
+          <div class="recordBg"></div>
+          <div class="recordText">消费记录</div>
+          <div class="recordDetailed">
+            <div class="detailedRecord">详细记录>></div>
+            </div>
           <div class="Text">
             <div class="hour">最近20小时</div>
             <div class="day">最近7天</div>
@@ -112,7 +91,7 @@
           </div>
         </div>
         <div class="line"></div>
-      </div> -->
+      </div>
     </v-layout>
   </v-container>
 </template>
@@ -276,6 +255,7 @@ export default {
       display flex
       align-items center
       padding 10px 0 10px 20px
+      
       .bg{
         width 18px
         height 18px
@@ -285,10 +265,7 @@ export default {
       }
       .fiscalText{
         font-size: 16px;
-        padding-left 5px;
-        font-size: 16px;
-        padding: 0 15px 0 6px;
-        font-weight: bold;
+        padding-left 5px
       }
     }
       .line{
@@ -299,7 +276,7 @@ export default {
     .balanceBox{
       display flex
       .balance{
-        margin 0 auto
+        width 325px
         text-align center
         .money{
           font-size 36px
@@ -329,7 +306,6 @@ export default {
         font-size 16px
         font-weight bold
       }
-      
     }
     .pushButton{
       height 232px
@@ -345,12 +321,35 @@ export default {
       display flex
       align-items center
       padding 20px 0 10px 20px
+      .recordBg{
+        width 18px
+        height 18px
+        border 4px solid red
+        border-radius 50%
+        background-color #4f6ef7
+      }
+      .recordText{
+        font-size: 16px;
+        padding 0 15px 0 6px
+        font-weight bold
+      }
+      .recordDetailed{
+        .detailedRecord{
+        border 1px solid #4f6ef7
+        color #4f6ef7
+        font-size 14px
+        font-weight bold
+        border-radius 5px
+        padding 2px 13px
+        }
+      }
       .Text{
         display flex
         justify-content center
         align-items center
         font-size 14px
         .hour{
+          padding-left  1070px
           padding-right 40px
         }
         .day{

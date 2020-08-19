@@ -102,7 +102,7 @@ export default [
   {
     path: '/dashboard',
     meta: {
-      name: '仪表板视图',
+      name: '控制台',
       requiresAuth: true
     },
     component: () => import(`@/views/DashboardView.vue`),
@@ -110,9 +110,17 @@ export default [
       {
         path: '/',
         meta: {
-          name: '仪表板',
+          name: '概况',
         },
         component: () => import(`@/components/DashViews/Dashboard.vue`)
+      },
+      {
+        path: 'financial-affairs',
+        meta: {
+          name: '财务管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/financialAffairs.vue`)
       },
       {
         path: 'user-profile',

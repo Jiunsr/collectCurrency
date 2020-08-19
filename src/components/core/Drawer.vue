@@ -19,16 +19,8 @@
         column
         :dark="false"
       >
-        <v-list style="background:#fff;">
-          <v-list-item-avatar
-            color="grey"
-          >
-            <v-img
-              :src="logo"
-              height="64"
-              contain
-            />
-          </v-list-item-avatar>
+        <v-list style="background:#fff;" height="90" class="d-flex justify-center align-center">
+          <v-img :src="logo" height="100%" max-height="42" max-width="92" />
         </v-list>
         <!-- <v-divider/> -->
         <v-list-item
@@ -56,12 +48,17 @@ import {
 
 export default {
   data: () => ({
-    logo: require('@/assets/img/redditicon.png'),
+    logo: require('@/assets/img/shouye_03.png'),
     links: [
       {
         to: '/',
         icon: 'mdi-view-dashboard',
-        text: '仪表板'
+        text: '概况'
+      },
+      {
+        to: '/dashboard/financial-affairs',
+        icon: 'mdi-table-edit',
+        text: '财务管理'
       },
       {
         to: '/dashboard/user-profile',

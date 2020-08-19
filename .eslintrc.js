@@ -4,13 +4,12 @@ module.exports = {
     node: false
   },
   'extends': [
-    'standard',
-    'plugin:vue/recommended'
+    // 'standard',
+    // 'plugin:vue/recommended'
   ],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'off' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'off' : 'off',
-    'eslint-disable': true
+    // 'no-console': process.env.NODE_ENV === 'production' ? 'off' : 'off',
+    // 'no-debugger': process.env.NODE_ENV === 'production' ? 'off' : 'off',
   },
   parserOptions: {
     parser: 'babel-eslint'
