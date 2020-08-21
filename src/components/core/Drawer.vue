@@ -19,16 +19,8 @@
         column
         :dark="false"
       >
-        <v-list style="background:#fff;">
-          <v-list-item-avatar
-            color="grey"
-          >
-            <v-img
-              :src="logo"
-              height="64"
-              contain
-            />
-          </v-list-item-avatar>
+        <v-list style="background:#fff;" height="90" class="d-flex justify-center align-center">
+          <v-img :src="logo" height="100%" max-height="42" max-width="92" />
         </v-list>
         <!-- <v-divider/> -->
         <v-list-item
@@ -56,47 +48,48 @@ import {
 
 export default {
   data: () => ({
-    logo: require('@/assets/img/redditicon.png'),
+    logo: require('@/assets/img/shouye_03.png'),
     links: [
       {
-        to: '/',
+        to: '/dashboard/console',
         icon: 'mdi-view-dashboard',
-        text: '仪表板'
+        text: '概况'
       },
       {
-        to: '/dashboard/user-profile',
+        to: '/dashboard/applyManage',
         icon: 'mdi-account',
-        text: 'User Profile'
+        text: '应用管理'
       },
       {
-        to: '/dashboard/table-list',
-        icon: 'mdi-clipboard-outline',
-        text: 'Table List'
-      },
-      {
-        to: '/dashboard/user-tables',
-        icon: 'mdi-table-edit',
-        text: 'Users Table'
-      },
-      {
-        to: '/dashboard/typography',
+        to: '/dashboard/addressManage',
         icon: 'mdi-format-font',
-        text: 'Typography'
+        text: '地址管理'
       },
       {
-        to: '/dashboard/icons',
+        to: '/dashboard/houstonManagement',
         icon: 'mdi-chart-bubble',
-        text: 'Icons'
+        text: '进账管理'
+      },
+  
+      {
+        to: '/dashboard/management',
+        icon: 'mdi-table-edit',
+        text: '出账管理'
       },
       {
-        to: '/dashboard/maps',
+        to: '/dashboard/financial-affairs',
+        icon: 'mdi-table-edit',
+        text: '财务管理'
+      },
+      {
+        to: '/dashboard/systemSettings',
         icon: 'mdi-map-marker',
-        text: 'Maps'
+        text: '系统设置'
       },
       {
-        to: '/dashboard/notifications',
+        to: '/dashboard/help',
         icon: 'mdi-bell',
-        text: 'Notifications'
+        text: '帮助中心'
       }
     ],
     responsive: false

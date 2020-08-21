@@ -1,9 +1,10 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+/* eslint-disable */
 import Vue from 'vue'
 
 // Components
-import './components'
+import 'components'
 
 // Plugins
 import './plugins'
@@ -19,9 +20,17 @@ import store from '@/store'
 import '@mdi/font/css/materialdesignicons.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import axios from 'axios'
-
+import ViewUI from 'view-design';
+console.warn(ViewUI);
 import vuetify from './plugins/vuetify';
 Vue.config.productionTip = false
+
+import 'view-design/dist/styles/iview.css';
+Vue.use(ViewUI);
+
+// import { Button, Table } from 'view-design';
+// Vue.component('Table', Table);
+// Vue.component('Button', Button);
 
 Vue.prototype.$http = axios
 // Sets the default url used by all of this axios instance's requests
@@ -34,11 +43,12 @@ if (token) {
 }
 
 
+
 // Sync store with router
 sync(store, router)
 
 
-/* eslint-disable no-new */
+/* eslint-disable */
 new Vue({
   vuetify,
   i18n,

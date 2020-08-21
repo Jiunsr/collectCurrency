@@ -11,14 +11,14 @@
                         <v-row>
                             <v-col md="4">
                                 <div class="downloadOverall">
-                                    <v-btn class="ma-2" color="#4f6ef7" dark  large="true" style="width: 200px; font-size: 18px; font-weight: bold !important; height: 60px; margin-bottom:20px; text-transform: none;">windows版
+                                    <v-btn class="ma-2" color="#4f6ef7" dark  :large="true" style="width: 200px; font-size: 18px; font-weight: bold !important; height: 60px; margin-bottom:20px; text-transform: none;">windows版
                                         <v-icon size="20" dark right>{{mdiDownload}}</v-icon>
                                     </v-btn>
 
-                                    <v-btn class="ma-2" color="#4f6ef7" dark  large="true" style="width: 200px; font-size: 18px; font-weight: bold !important; height: 60px; margin-left: 30px; margin-bottom:20px; text-transform: none;">Mac版</v-btn>
-                                    <v-btn class="ma-2" color="#4f6ef7" dark  large="true" style="width: 200px; font-size: 18px; font-weight: bold !important; height: 60px; margin-bottom:20px; text-transform: none;">Linux版</v-btn>
-                                    <v-btn class="ma-2" color="#4f6ef7" dark  large="true" style="width: 200px; font-size: 18px; font-weight: bold !important; height: 60px; margin-left: 30px; margin-bottom:20px; text-transform: none;">iOS版</v-btn>
-                                    <v-btn class="ma-2" color="#4f6ef7" dark  large="true" style="width: 200px; font-size: 18px; font-weight: bold !important; height: 60px; text-transform: none;">Android版</v-btn>
+                                    <v-btn class="ma-2" color="#4f6ef7" dark  :large="true" style="width: 200px; font-size: 18px; font-weight: bold !important; height: 60px; margin-left: 30px; margin-bottom:20px; text-transform: none;">Mac版</v-btn>
+                                    <v-btn class="ma-2" color="#4f6ef7" dark  :large="true" style="width: 200px; font-size: 18px; font-weight: bold !important; height: 60px; margin-bottom:20px; text-transform: none;">Linux版</v-btn>
+                                    <v-btn class="ma-2" color="#4f6ef7" dark  :large="true" style="width: 200px; font-size: 18px; font-weight: bold !important; height: 60px; margin-left: 30px; margin-bottom:20px; text-transform: none;">iOS版</v-btn>
+                                    <v-btn class="ma-2" color="#4f6ef7" dark  :large="true" style="width: 200px; font-size: 18px; font-weight: bold !important; height: 60px; text-transform: none;">Android版</v-btn>
                                 </div>
                             </v-col>
                         </v-row>

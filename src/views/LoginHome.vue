@@ -152,7 +152,7 @@ export default {
 			let pword = this.pword;
 			let param = {phone, pword}
 			this.login(param).then((result) => {
-				this.$router.push({ path:"/dashboard" });
+				this.$router.push({ name:"console" });
 			}).catch((err) => {
 				console.warn(err);
 			});

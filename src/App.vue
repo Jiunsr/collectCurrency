@@ -5,15 +5,38 @@
 </template>
 
 <style lang="scss">
+  /* eslint-disable */
 	@import "@/styles/index.scss";
-
-	/* Remove in 1.2 */
+  /* eslint-disable */
 	.v-datatable thead th.column.sortable i {
 		vertical-align: unset;
-	}
+  }
+  .page-title{
+    padding: 5px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .page-item{
+      color: #000;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .page-item+.page-item{
+      padding-left: 10px;
+      color: #000;
+      font-size: 14px;
+      &::before{
+        content: ">";
+        color: #000;
+        font-size: 16px;
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+  }
 </style>
 <script>
-// checks to see if auth jwt token is valid or has expired, if it gets back 401 error log out
+/* eslint-disable */
 export default {
   created: function () {
     this.$http.interceptors.response.use((response) => {

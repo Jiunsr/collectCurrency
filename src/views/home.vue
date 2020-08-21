@@ -1,14 +1,16 @@
 <template>
     <div class="home">
         <div class="banner">
-            <div class="bannerImg1">
-                <img src="./../assets/img/shouye_11.png" alt="">
-            </div>
-            <div class="bannerText">
-                <div class="text"><span style="font-size: 36px; font-weight: bold; color: #4f6ef7;">区块链数字资产时代</span> 已经到来</div>
-                <div class="text0">即可对接上区块链数字资产</div>
-                <div class="text1">我们提供数字资产的收取管理功能</div>
-                <v-btn slot="append" color="#4f6ef7" :large="true" style="padding: 12px 30px !important; margin-left: 170px; font-size: 18px; font-weight: bold !important; height: 52px;">免费开始使用</v-btn>
+            <div class="bannerCenter">
+                <div class="bannerImg1">
+                    <img src="./../assets/img/shouye_11.png" alt="">
+                </div>
+                <div class="bannerText">
+                    <div class="text"><span style="font-size: 36px; font-weight: bold; color: #4f6ef7;">区块链数字资产时代</span> 已经到来</div>
+                    <div class="text0">即可对接上区块链数字资产</div>
+                    <div class="text1">我们提供数字资产的收取管理功能</div>
+                    <v-btn slot="append" color="#4f6ef7" :large="true" style="padding: 12px 30px !important; margin-left: 170px; font-size: 18px; font-weight: bold !important; height: 52px;">免费开始使用</v-btn>
+                </div>
             </div>
             <div class="bannerImg2">
                 <img src="./../assets/img/cpxz_03_03.jpg" alt="">
@@ -100,143 +102,116 @@
                 <div class="letter">SUPPORT CURRENCIES</div>
                 <div class="standBy">我们支持各种市场上的主流币种</div>
                 <div class="customMade">您需要定制币种？</div>
-                <v-btn slot="append" color="#4f6ef7" large="true" style="font-size: 18px; font-weight: bold !important;">联系我们</v-btn>
+                <v-btn slot="append" color="#4f6ef7" :large="true" style="font-size: 18px; font-weight: bold !important;">联系我们</v-btn>
             </div>
-            <v-container class="currency">
-                <v-row>
-                    <v-col md="3">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_32.png" alt="">
-                                <div>比特币</div>
-                            </div>
-                        </div>
-                    </v-col>
+            <div class="currency">
 
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_34.png" alt="">
-                                <div>泰达币</div>
-                            </div>
-                        </div>
-                    </v-col>
-                    
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_36.png" alt="">
-                                <div>以太坊</div>
-                            </div>
-                        </div>
-                    </v-col>
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_32.png" alt="">
+                        <div>比特币</div>
+                    </div>
+                </div>
 
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_38.png" alt="">
-                                <div>瑞波币</div>
-                            </div>
-                        </div>
-                    </v-col>
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_34.png" alt="">
+                        <div>泰达币</div>
+                    </div>
+                </div>
 
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_43.png" alt="">
-                                <div>比特币BSV</div>
-                            </div>
-                        </div>
-                    </v-col>
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_36.png" alt="">
+                        <div>以太坊</div>
+                    </div>
+                </div>
 
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_44.png" alt="">
-                                <div>比特现金</div>
-                            </div>
-                        </div>
-                    </v-col>
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_38.png" alt="">
+                        <div>瑞波币</div>
+                    </div>
+                </div>
 
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_45.png" alt="">
-                                <div>莱特币</div>
-                            </div>
-                        </div>
-                    </v-col>
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_43.png" alt="">
+                        <div>比特币BSV</div>
+                    </div>
+                </div>
 
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_46.png" alt="">
-                                <div>机子币</div>
-                            </div>
-                        </div>
-                    </v-col>
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_44.png" alt="">
+                        <div>比特现金</div>
+                    </div>
+                </div>
 
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_51.png" alt="">
-                                <div>恒星币</div>
-                            </div>
-                        </div>
-                    </v-col>
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_45.png" alt="">
+                        <div>莱特币</div>
+                    </div>
+                </div>
 
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_52.png" alt="">
-                                <div>以太坊经典币</div>
-                            </div>
-                        </div>
-                    </v-col>
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_46.png" alt="">
+                        <div>机子币</div>
+                    </div>
+                </div>
 
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_53.png" alt="">
-                                <div>达世币</div>
-                            </div>
-                        </div>
-                    </v-col>
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_51.png" alt="">
+                        <div>恒星币</div>
+                    </div>
+                </div>
 
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_54.png" alt="">
-                                <div>小蚁币</div>
-                            </div>
-                        </div>
-                    </v-col>
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_52.png" alt="">
+                        <div>以太坊经典币</div>
+                    </div>
+                </div>
 
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_59.png" alt="">
-                                <div>狗狗币</div>
-                            </div>
-                        </div>
-                    </v-col>
-                    
-                    <v-col md="3" class="ml-auto">
-                        <div class="currencyProduct">
-                            <div class="currencyImg">
-                                <img src="./../assets/img/shouye_60.png" alt="">
-                                <div>其他币种</div>
-                            </div>
-                        </div>
-                    </v-col>
-                </v-row>
-            </v-container>
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_53.png" alt="">
+                        <div>达世币</div>
+                    </div>
+                </div>
+
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_54.png" alt="">
+                        <div>小蚁币</div>
+                    </div>
+                </div>
+
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_59.png" alt="">
+                        <div>狗狗币</div>
+                    </div>
+                </div>
+
+                <div class="currencyProduct">
+                    <div class="currencyImg">
+                        <img src="./../assets/img/shouye_60.png" alt="">
+                        <div>其他币种</div>
+                    </div>
+                </div>
+                <div class="currencyProduct hide"></div>
+                <div class="currencyProduct hide"></div>
+            </div>
 
         </div>
         <div class="dockingImmediately">
             <div class="dockingCenter">
-                <div>立即对接数字资产</div>
-                <div style="font-size: 16px; letter-spacing: 4.5px;">CONNECT DIGITAL ASSETS NOW</div>
+                <div class="docking">立即对接数字资产</div>
+                <div class="letter">CONNECT DIGITAL ASSETS NOW</div>
             </div>
         </div>
         <div class="bottom">
@@ -271,297 +246,49 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@media only screen and (max-width: 1264px){
-    .banner{
-        .bannerImg1{
-            padding 120px 0 120px 70px !important
-            img{
-                width 270px !important
-            }
-        }
-        .bannerImg2{
-            padding 20px 70px 68px 0 !important
-            img{
-                width 530px !important
-            }
-        }
-        .bannerText{
-            padding-top 125px !important
-            left 210px !important
-            .text{
-                font-size 20px !important 
-                padding 0 0 10px 0 !important 
-                span{
-                    font-size 26px !important 
-                }
-            }
-            .text0{
-                font-size 20px !important
-                padding 6px 0 0 65px !important 
-                letter-spacing 5px !important
-            }
-            .text1{
-                font-size 18px !important
-                padding 30px 0 25px 70px !important 
-                letter-spacing 1px !important
-            }
-            .v-btn{
-                margin-left 140px !important
-                font-size 14px !important
-                height 37px !important
-                width 130px !important
-            }
-        }
-    }
-    .securiytCenter{
-        width 1200px !important
-        .security{
-            width 260px !important
-        }  
-    }
-    .serviceMode{
-        .flowChart{
-            width 1130px !important
-            height 450px !important
-            .chartImg{
-                img{
-                    width 900px !important
-                }
-            }
-        }
-    }
-    .supportCurrency{
-        .supportText{
-            .kind{
-                font-size 26px !important
-            }
-            .letter{
-                font-size 14px !important
-                letter-spacing 0px !important
-            }
-            .standBy{
-                font-size 20px !important
-            }
-            .customMade{
-                font-size 20px !important
-            }
-            .button{
-
-            }
-        }
-        .currency{
-            margin-left 60px !important
-            padding 15px 40px !important
-            width 750px !important
-            .currencyProduct{
-                width: 150px !important
-                height: 90px !important
-                .currencyImg{
-                    img{
-                        width: 40px !important
-                        height: 40px !important
-                    }
-                    div{
-                        font-size 14px !important
-                    }
-                }
-            }
-        }
-    }
-}
-@media (max-width: 960px){
-    .banner{
-        .bannerImg1{
-            padding 100px 0 100px 45px !important
-            img{
-                width 190px !important
-            }
-        }
-        .bannerImg2{
-            padding 20px 60px 45px 0 !important
-            img{
-                width 420px !important
-            }
-        }
-        .bannerText{
-            padding-top 100px !important
-            left 150px !important
-            .text{
-                font-size 16px !important 
-                padding 0 0 6px 0 !important 
-                letter-spacing 3.5px !important
-                span{
-                    font-size 20px !important 
-                }
-            }
-            .text0{
-                font-size 16px !important
-                padding 0 0 0 45px !important 
-                letter-spacing 5px !important
-            }
-            .text1{
-                font-size 16px !important
-                padding 12px 0 12px 40px !important 
-                letter-spacing 1px !important
-            }
-            .v-btn{
-                margin-left 90px !important
-                font-size 10px !important
-                height 30px !important
-                width 100px !important
-            }
-        }
-    }
-    .noticeNotice{
-        .noticeText{
-            .round{
-                width 15px !important
-                height 15px !important
-            }
-            .text{
-                font-size 12px !important
-            }
-        }
-    }
-    .chooseUs{
-        .chooseUsText{
-            .usText1{
-                padding: 100px 0 15px 0 !important
-            }
-            .usText2{
-                padding-bottom 60px !important
-            }
-        }
-        .securiytCenter{
-            width 850px !important
-            .security{
-                width 200px !important
-                height 320px !important
-                .securityImg{
-                    padding-top 30px !important
-                    img{
-                        width 80px !important
-                        height 80px !important
-                    }
-                    .guarantee1{
-                        font-size 16px !important
-                        font-weight bold !important
-                        padding 15px 0 !important
-                    }
-                    .guarantee2{
-                        font-size 14px !important
-                        text-align left !important
-                        padding 0 20px !important
-                    }
-                }
-            }  
-        }
-    }
-    .serviceMode{
-        .serviceText{
-            .serviceText1{
-                padding: 110px 0 15px 0 !important
-            }
-        }
-        .flowChart{
-            width 88% !important
-            height 360px !important
-            .chartImg{
-                img{
-                    width 750px !important
-                }
-            }
-        }
-    }
-    .supportCurrency{
-        padding: 200px 0 140px 0 !important
-        .supportText{
-            .kind{
-                font-size 20px !important
-                padding-bottom: 10px !important
-            }
-            .letter{
-                font-size 12px !important
-                padding-bottom: 20px !important
-            }
-            .standBy{
-                font-size 16px !important
-                padding-bottom: 10px !important
-            }
-            .customMade{
-                font-size 16px !important
-                padding-bottom: 40px !important
-            }
-            .v-btn{
-                font-size 14px !important
-                height 35px !important
-                width 100px !important
-            }
-        }
-        .currency{
-            margin-left 25px !important
-            padding 10px 30px !important
-            width 570px !important
-            .currencyProduct{
-                width: 110px !important
-                height: 80px !important
-                padding 0 !important
-                .currencyImg{
-                    img{
-                        width: 35px !important
-                        height: 35px !important
-                    }
-                    div{
-                        font-size 12px !important
-                    }
-                }
-            }
-        }
-    }
-    .dockingImmediately{
-        height 450px !important
-    }
-
-}
-@media (max-width: 600px){
-
-
+.hide{ 
+    opacity 0
+    pointer-events none
 }
 .banner{
     display flex
-    position relative
+    flex-wrap: wrap;
+    flex-basis: auto;
     background-color #ffffff
-    .bannerImg1{
-        padding 213px 0 170px 152px
-        img{
-            width 343px
+    .bannerCenter{
+        position relative
+        display flex
+        flex 1
+        .bannerImg1{
+            padding 213px 0 170px 152px
+            img{
+                width 343px
+            }
         }
-    }
-    .bannerText{
-        padding-top 220px
-        position absolute
-        left 333px
-        .text{
-            padding-bottom 15px
-            font-size 26px
-            font-weight bold
-            letter-spacing 3px
-        }
-        .text0{
-            font-size 26px
-            font-weight bold
-            padding 10px 0 0 80px
-            letter-spacing 8px
-        }
-        .text1{
-            font-size 26px
-            padding 48px 0 40px 100px
-            letter-spacing 3px
+        .bannerText{
+            padding-top 220px
+            position absolute
+            left 333px
+            .text{
+                padding-bottom 15px
+                font-size 26px
+                font-weight bold
+                letter-spacing 3.5px
+            }
+            .text0{
+                font-size 26px
+                font-weight bold
+                padding 10px 0 0 80px
+                letter-spacing 8px
+            }
+            .text1{
+                font-size 25px
+                padding 48px 0 40px 85px
+                letter-spacing 2px
+            }
         }
     }
     .bannerImg2{
-        position absolute
-        right 0
         padding 55px 195px 68px 0
         img{
             width 787px
@@ -577,8 +304,9 @@ export default {
     align-items center
     .noticeText{
         display flex
-        justify-content center
+        justify-content flex-start
         align-items center
+        min-width 290px
         .round{
             width 20px
             height 20px
@@ -629,6 +357,7 @@ export default {
             justify-content space-evenly
             align-items center
             .security{
+                margin 5px
                 text-align center
                 width 300px
                 height 350px
@@ -655,6 +384,8 @@ export default {
     }
 }
 .serviceMode{
+    padding 0 20px
+    box-sizing border-box
     .serviceText{
         text-align center
         .serviceText1{
@@ -671,7 +402,8 @@ export default {
         }
     }
     .flowChart{
-        width 1414px
+        max-width 1400px
+        width 100%
         height 505px
         border-radius 10px
         box-shadow 0 4px 10px #e5e5e5
@@ -679,9 +411,15 @@ export default {
         display flex
         justify-content center
         align-items center
+        padding 0 20px
+        box-sizing border-box
         .chartImg{
+            width 100%
+            max-width 70%
             img{
-                width 1127px
+                width 100%
+                height 100%
+                object-fit cover
             }
         }
     }
@@ -690,7 +428,9 @@ export default {
     display flex
     justify-content center
     align-items center
-    padding 395px 0 178px 0
+    padding 150px 0 150px 0
+    flex-wrap wrap
+    flex-basis auto
     .supportText{
         
         .kind{
@@ -720,9 +460,14 @@ export default {
         box-shadow 0 4px 10px #e5e5e5
         margin-left 90px
         padding 20px 50px
-        width 920px
+        min-width 900px
+        width 900px
         margin-right 0
+        display flex
+        flex-wrap wrap
+        justify-content space-around
         .currencyProduct{
+            margin 10px 0
             width 180px
             height 100px
             border 1px solid #f2f2f2
@@ -753,14 +498,19 @@ export default {
     align-items center
     .dockingCenter{
         text-align center
-        div{
+        .docking{
             font-size 40px
             font-weight bold
             color #fff
             letter-spacing 8px
             padding-bottom 20px
         }
-
+        .letter{
+            font-size 16px 
+            letter-spacing 4.5px
+            color #fff
+            font-weight bold
+        }
     }
 }
 .bottom{
@@ -783,6 +533,356 @@ export default {
         font-size 12px
         color #fff
         padding-bottom 3px
+    }
+}
+.home{
+    @media only screen and (max-width: 1264px){
+        .banner{
+            .bannerCenter{
+                .bannerImg1{
+                    padding 120px 0 60px 280px
+                    img{
+                        width 300px
+                    }
+                }
+                .bannerText{
+                    padding-top: 140px;
+                    left: 450px;
+                    .text{
+                        font-size 22px
+                        padding 0 0 10px 0
+                        span{
+                            font-size 28px !important;
+                        }
+                    }
+                    .text0{
+                        font-size 22px
+                        padding 6px 0 0 65px
+                        letter-spacing 5px
+                    }
+                    .text1{
+                        font-size 20px 
+                        padding 30px 0 25px 70px  
+                        letter-spacing 1px 
+                    }
+                    .v-btn{
+                        margin-left 140px !important;
+                        font-size 16px  !important;
+                        height 45px !important;
+                        width 140px !important;
+                    }
+                }
+            }
+            .bannerImg2{
+                    padding 0px 0px 68px 300px 
+                    img{
+                        width 650px
+                    }
+            }
+        }
+        .noticeNotice{
+            flex-wrap wrap
+            flex-basis auto
+            .noticeText{
+                .round{
+                    width 15px 
+                    height 15px 
+                }
+                .text{
+                    font-size 12px 
+                }
+            }
+        }
+        .securiytCenter{
+            width 1200px 
+            .security{
+                width 260px 
+            }  
+        }
+        .supportCurrency{
+            padding 120px 0 150px 0
+            text-align center
+            .supportText{
+                .kind{
+                    font-size 26px 
+                }
+                .letter{
+                    font-size 14px 
+                    letter-spacing 0px 
+                }
+                .standBy{
+                    font-size 20px 
+                }
+                .customMade{
+                    font-size 20px 
+                    padding-bottom 40px
+                }
+                .v-btn{
+                    margin-bottom 30px
+                }
+            }
+            .currency{
+                margin-left 24px 
+                padding 15px 40px 
+                width 650px 
+                .currencyProduct{
+                    width: 150px 
+                    height: 90px 
+                    .currencyImg{
+                        img{
+                            width: 40px 
+                            height: 40px 
+                        }
+                        div{
+                            font-size 14px 
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 960px){
+        .banner{
+            .bannerCenter{
+                .bannerImg1{
+                    padding 100px 0 60px 160px
+                    img{
+                        width 270px
+                    }
+                }
+                .bannerText{
+                    padding-top: 105px;
+                    left: 300px;
+                    .text{
+                        font-size 22px
+                        padding 0 0 10px 0
+                        span{
+                            font-size 28px !important;
+                        }
+                    }
+                    .text0{
+                        font-size 22px
+                        padding 6px 0 0 65px
+                        letter-spacing 5px
+                    }
+                    .text1{
+                        font-size 20px 
+                        padding 30px 0 25px 70px  
+                        letter-spacing 1px 
+                    }
+                    .v-btn{
+                        margin-left 140px !important;
+                        font-size 16px  !important;
+                        height 45px !important;
+                        width 140px !important;
+                    }
+                }
+            }
+            .bannerImg2{
+                    padding 0px 0px 68px 180px 
+                    img{
+                        width 550px
+                    }
+            }
+        }
+        .noticeNotice{
+            flex-wrap wrap
+            flex-basis auto
+            padding 15px 0
+            .noticeText{
+                .round{
+                    width 15px 
+                    height 15px 
+                }
+                .text{
+                    font-size 12px 
+                }
+            }
+        }
+        .chooseUs{
+            .chooseUsText{
+                .usText1{
+                    padding: 100px 0 15px 0 
+                }
+                .usText2{
+                    padding-bottom 60px 
+                }
+            }
+            .securiytCenter{
+                width 850px 
+                flex-wrap wrap
+                flex-basis auto
+                .security{
+                    width 300px 
+                    height 320px 
+                    margin-bottom: 20px;
+                    .securityImg{
+                        padding-top 30px 
+                        img{
+                            width 80px 
+                            height 80px 
+                        }
+                        .guarantee1{
+                            font-size 16px 
+                            font-weight bold 
+                            padding 15px 0 
+                        }
+                        .guarantee2{
+                            font-size 14px 
+                            text-align left 
+                            padding 0 20px 
+                        }
+                    }
+                }  
+            }
+        }
+        .serviceMode{
+            .serviceText{
+                .serviceText1{
+                    padding: 110px 0 15px 0 
+                }
+            }
+        }
+        .securityBox{
+            .securiytCenter{
+                .security{
+                    width 290px 
+                }  
+            }
+        }
+        .supportCurrency{
+            padding: 150px 0 140px 0 
+            .supportText{
+                .kind{
+                    font-size 20px 
+                    padding-bottom: 10px 
+                }
+                .letter{
+                    font-size 12px 
+                    padding-bottom: 20px 
+                }
+                .standBy{
+                    font-size 16px 
+                    padding-bottom: 10px 
+                }
+                .customMade{
+                    font-size 16px 
+                    padding-bottom: 40px 
+                }
+                .v-btn{
+                    font-size 14px 
+                    height 35px 
+                    width 100px 
+                }
+            }
+            .currency{
+                padding 10px 30px
+                width 600px
+                margin-left 24px
+                min-width 600px
+                .currencyProduct{
+                    width: 110px 
+                    height: 80px 
+                    padding 0 
+                    .currencyImg{
+                        img{
+                            width: 35px 
+                            height: 35px 
+                        }
+                        div{
+                            font-size 12px 
+                        }
+                    }
+                }
+            }
+        }
+        .dockingImmediately{
+            height 450px 
+        }
+        .flowChart{
+            height 300px
+        }
+    }
+    @media (max-width: 600px){
+        .banner{
+            .bannerCenter{
+                .bannerImg1{
+                    padding 65px 0 50px 80px
+                    img{
+                        width 200px
+                    }
+                }
+                .bannerText{
+                    padding-top: 65px;
+                    left: 190px;
+                    .text{
+                        font-size 16px
+                        span{
+                            font-size 22px !important;
+                        }
+                    }
+                    .text0{
+                        font-size 16px
+                        padding 0 0 0 50px
+                        letter-spacing 6px
+                    }
+                    .text1{
+                        font-size 15px 
+                        padding 12px 0 10px 45px  
+                        letter-spacing 2.5px 
+                    }
+                    .v-btn{
+                        margin-left 100px !important;
+                        font-size 14px  !important;
+                        height 35px !important;
+                        width 130px !important;
+                    }
+                }
+            }
+            .bannerImg2{
+                    padding 0px 0px 30px 50px 
+                    img{
+                        width 500px
+                    }
+            }
+        }
+
+        .noticeNotice{
+            .noticeText+.noticeText{
+                margin-top 10px
+            }
+        }
+        .flowChart{
+            height 300px
+            .chartImg{
+                max-width: 100%;
+            }
+        }
+        .supportCurrency{
+            padding 0 20px
+            box-sizing border-box
+            margin-bottom 20px
+            .supportText{
+                margin 50px 0
+            }
+            .currency{                                 
+                min-width 100%
+            }
+            .currencyProduct.hide{
+                display none
+            } 
+        }
+        .dockingCenter{
+            .docking{
+                font-size 30px
+            }
+            .letter{
+                font-size 12px 
+                font-weight bold
+                color #fff
+            }
+    
+        }
     }
 }
 </style>
