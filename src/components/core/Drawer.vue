@@ -51,9 +51,30 @@ export default {
     logo: require('@/assets/img/shouye_03.png'),
     links: [
       {
-        to: '/',
+        to: '/dashboard/console',
         icon: 'mdi-view-dashboard',
         text: '概况'
+      },
+      {
+        to: '/dashboard/applyManage',
+        icon: 'mdi-account',
+        text: '应用管理'
+      },
+      {
+        to: '/dashboard/addressManage',
+        icon: 'mdi-format-font',
+        text: '地址管理'
+      },
+      {
+        to: '/dashboard/houstonManagement',
+        icon: 'mdi-chart-bubble',
+        text: '进账管理'
+      },
+  
+      {
+        to: '/dashboard/management',
+        icon: 'mdi-table-edit',
+        text: '出账管理'
       },
       {
         to: '/dashboard/financial-affairs',
@@ -61,39 +82,14 @@ export default {
         text: '财务管理'
       },
       {
-        to: '/dashboard/user-profile',
-        icon: 'mdi-account',
-        text: 'User Profile'
-      },
-      {
-        to: '/dashboard/table-list',
-        icon: 'mdi-clipboard-outline',
-        text: 'Table List'
-      },
-      {
-        to: '/dashboard/user-tables',
-        icon: 'mdi-table-edit',
-        text: 'Users Table'
-      },
-      {
-        to: '/dashboard/typography',
-        icon: 'mdi-format-font',
-        text: 'Typography'
-      },
-      {
-        to: '/dashboard/icons',
-        icon: 'mdi-chart-bubble',
-        text: 'Icons'
-      },
-      {
-        to: '/dashboard/maps',
+        to: '/dashboard/systemSettings',
         icon: 'mdi-map-marker',
-        text: 'Maps'
+        text: '系统设置'
       },
       {
-        to: '/dashboard/notifications',
+        to: '/dashboard/help',
         icon: 'mdi-bell',
-        text: 'Notifications'
+        text: '帮助中心'
       }
     ],
     responsive: false

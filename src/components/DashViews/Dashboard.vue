@@ -6,9 +6,8 @@
   >
     <div class="page-title">
       <div class="page-item">概况</div>
-      <div class="page-item">详情</div>
     </div>
-    <v-layout wrap>
+    <v-layout wrap style="width:100%;">
 
       <v-flex
         md12
@@ -17,26 +16,44 @@
         class="pl-8 pr-0"
       > 
         <v-card class="mx-auto" height="288" :elevation="4" mar>
-          <div class="fiscalHappening">
+          <div class="dashboard">
             <div class="fiscalCenter">
               <div class="bg"></div>
-              <div class="fiscalText">财务情况</div>
+              <div class="fiscalText">资源概况</div>
             </div>
             <div class="line"></div>
             <div class="balanceBox">
               <div class="balance">
-                <div class="money">￥10000.00</div>
-                <div class="available">可用余额：</div>
-                <v-btn small color="#4f6ef7" height="30" width="90px" style="font-size:14px;">充值</v-btn>
+                <div class="money" style="font-size: 26px;">23/</div>
+                <div class="money" style="font-size: 26px;">100</div>
+                <div class="available">地址数量</div>
               </div>
               <div class="line2"></div>
               <div class="balance">
-                <div class="money">1000</div>
-                <div class="available">可用地址数：</div>
-                <v-btn small color="#4f6ef7" height="30" width="90px" style="font-size:14px;">购买</v-btn>
+                <div class="money" style="font-size: 40px;">9</div>
+                <div class="available">应用数量</div>
+              </div>
+              <div class="line2"></div>
+              <div class="balance">
+                <div class="money" style="font-size: 26px;">23/</div>
+                <div class="money" style="font-size: 26px;">100</div>
+                <div class="available">币种数量</div>
+              </div>
+              <div class="line2"></div>
+              <div class="balance">
+                <div class="money" style="font-size: 18px;">10010/</div>
+                <div class="money" style="font-size: 18px;">￥10000.00</div>
+                <div class="available">进账资产</div>
+              </div>
+              <div class="line2"></div>
+              <div class="balance">
+                <div class="money" style="font-size: 18px;">10010/</div>
+                <div class="money" style="font-size: 18px;">￥10000.00</div>
+                <div class="available">出账资产</div>
               </div>
             </div>
           </div>
+          <v-btn small color="#4f6ef7" height="30" width="130px" style="font-size:14px;display:block;margin:10px auto;">购买地址数量</v-btn>
         </v-card>
       </v-flex>
 
@@ -47,7 +64,7 @@
         class="pl-8 pr-4"
       >  
         <v-card class="mx-auto" height="288" max-width="100%" :elevation="4">
-          <div class="fiscalHappening">
+          <div class="dashboard">
             <div class="fiscalCenter">
               <div class="bg"></div>
               <div class="fiscalText">待续费</div>
@@ -55,17 +72,17 @@
             <div class="line"></div>
             <div class="balanceBox">
               <div class="balance">
-                <div class="money">100</div>
-                <div class="available">地址数量</div>
+                <div class="money" style="font-size:40px;">100</div>
+                <div class="available" >地址数量</div>
               </div>
               <div class="line2"></div>
               <div class="balance">
-                <div class="money">110</div>
+                <div class="money" style="font-size:40px;">110</div>
                 <div class="available">应用数量</div>
               </div>
             </div>
           </div>
-          <v-btn small color="#4f6ef7" height="30" width="80px" style="font-size:14px;display:block;margin:10px auto;">充值</v-btn>
+          <v-btn small color="#4f6ef7" height="30" width="80px" style="font-size:14px;display:block;margin:10px auto;">续费</v-btn>
         </v-card>
       </v-flex>
       <v-flex
@@ -75,7 +92,7 @@
         class="pr-8 pl-4"
       >  
         <v-card class="mx-auto" height="288" max-width="100%" :elevation="4">
-          <div class="fiscalHappening">
+          <div class="dashboard">
             <div class="fiscalCenter">
               <div class="bg"></div>
               <div class="fiscalText">待出账</div>
@@ -83,36 +100,40 @@
             <div class="line"></div>
             <div class="balanceBox">
               <div class="balance">
-                <div class="money">0</div>
+                <div class="money" style="font-size:40px;">0</div>
                 <div class="available">待出账数量（笔）</div>
-                <v-btn small color="#4f6ef7" height="30" width="80px" style="font-size:14px;">处理</v-btn>
               </div>
             </div>
           </div>
+          <v-btn small color="#4f6ef7" height="30" width="80px" style="font-size:14px; display:block;margin:10px auto;">处理</v-btn>
         </v-card>
       </v-flex>
 
-      <v-flex
-        md12
-        sm12
-        lg12
-        class="pl-8 pr-8 pb-8 pt-0"
-      >  
-        <v-card class="mx-auto" height="400" max-width="100%" :elevation="4">
+			<v-flex
+				md12
+				sm12
+				lg12
+				class="pl-8 pr-8 pb-8"
+			>  
+				<v-card class="mx-auto pl-5 pr-5" max-width="100%" :elevation="4">
+					<div class="dasText">
+            <Tabs :animated="false">
+                <TabPane label="最近20小时">
+                  33
+                  
+                </TabPane>
+                <TabPane label="最近7天">
+                  22
+                </TabPane>
+                <TabPane label="最近30天">
+                  11
+                </TabPane>
+            </Tabs>
+					</div>
+          <div class="line"></div>
+				</v-card>
+			</v-flex>
 
-        </v-card>
-      </v-flex>
-
-      <!-- <div class="record">
-        <div class="recordCenter">
-          <div class="Text">
-            <div class="hour">最近20小时</div>
-            <div class="day">最近7天</div>
-            <div class="day1">最近30天</div>
-          </div>
-        </div>
-        <div class="line"></div>
-      </div> -->
     </v-layout>
   </v-container>
 </template>
@@ -271,7 +292,9 @@ export default {
 }
 </script>
 <style lang="stylus">
-  .fiscalHappening{
+  .dashboard{
+    display flex
+    flex-direction column
     .fiscalCenter{
       display flex
       align-items center
@@ -279,37 +302,50 @@ export default {
       .bg{
         width 18px
         height 18px
-        border 4px solid red
+        border 4px solid rgba(79,110,247,0.5)
         border-radius 50%
-        background-color #4f6ef7
+        // background-color #4f6ef7
+        &::after{
+          content ""
+          display block
+          width 100%
+          height 100%
+          border-radius 50%
+          background-color #4f6ef7
+        }
       }
       .fiscalText{
         font-size: 16px;
-        padding-left 5px;
-        font-size: 16px;
+        padding-left 5px; 
         padding: 0 15px 0 6px;
         font-weight: bold;
       }
     }
-      .line{
-        border-bottom 1px solid #efefef
-        width 91%
-        margin 0 auto
-      }
+    
+    .line{
+      border-bottom 1px solid #efefef
+      width 91%
+      margin 0 auto
+    }
+
     .balanceBox{
+      flex 1
       display flex
       .balance{
-        margin 0 auto
+        width 325px
+        margin 30px auto
         text-align center
+        display flex
+        flex-direction column
+        min-height 100px
         .money{
           font-size 36px
           color #4f6ef7
-          padding-top  55px 
+          flex 1
           font-weight bold
         }
         .available{
           font-size 16px
-          padding-bottom 25px
           color #212529
           font-weight bold
         }
@@ -320,6 +356,7 @@ export default {
         margin auto
       }
     }
+    
     .setUp{
         display flex
         justify-content center
@@ -331,41 +368,32 @@ export default {
       }
       
     }
+    
     .pushButton{
       height 232px
       padding 40px 55px
     }
   }
-  .record{
-    height 500px
-    border-radius 10px
-    box-shadow 0 10px 15px 10px #dcdcdc
-    margin 20px 25px
-    .recordCenter{
-      display flex
-      align-items center
-      padding 20px 0 10px 20px
-      .Text{
-        display flex
-        justify-content center
-        align-items center
-        font-size 14px
-        .hour{
-          padding-right 40px
-        }
-        .day{
-          padding-right 40px
-        }
-        .day1{
-          padding-right 40px
-        }
-      }
-
-    }
-      .line{
-        border-bottom 1px solid #efefef
-        width 97%
-        margin 0 auto
-      }
+.dasText{
+  height 570px
+  .ivu-tabs-bar{
+    margin: 16px 0;
+    border-bottom none;
   }
+  .ivu-tabs-nav{
+    .ivu-tabs-tab-active{
+      color #4f6ef7
+    }
+  } 
+  .ivu-tabs-nav{
+    .ivu-tabs-ink-bar{
+      background-color: #4f6ef7;
+    }
+  }
+}
+    .line{
+      border-bottom 1px solid #efefef 
+      width 97%
+      margin 0 auto
+    }
 </style>

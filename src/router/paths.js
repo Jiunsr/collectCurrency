@@ -8,7 +8,7 @@ export default [
     },
     beforeEnter: (to, from, next) => {
       if (store.getters.authorized) {
-        next('/dashboard')
+        next({name:'console'})
       } else {
         next()
       }
@@ -25,13 +25,6 @@ export default [
       requiresAuth: false
     },
     component: () => import(`@/views/homeMain.vue`),
-    beforeEnter: (to, from, next) => {
-      if (store.getters.authorized) {
-        next('/dashboard')
-      } else {
-        next()
-      }
-    },
     children: [
       {
         path: '/',
@@ -105,22 +98,93 @@ export default [
       name: '控制台',
       requiresAuth: true
     },
+    beforeEnter: (to, from, next) => {
+      console.warn({ to, from });
+      if (!store.getters.authorized) {
+        next({name:'home'})
+        return
+      }
+      next()
+    },
     component: () => import(`@/views/DashboardView.vue`),
     children: [
       {
-        path: '/',
+        path: 'console',
+        name: 'console',
         meta: {
           name: '概况',
         },
         component: () => import(`@/components/DashViews/Dashboard.vue`)
       },
       {
-        path: 'financial-affairs',
+        path: 'applyManage',
         meta: {
-          name: '财务管理',
+          name: '应用管理',
           requiresAuth: true
         },
-        component: () => import(`@/components/DashViews/financialAffairs.vue`)
+        component: () => import(`@/components/DashViews/applyManage.vue`)
+      },
+      {
+        path: '/applyManageInfo',
+        name: 'applyManageInfo',
+        meta: {
+          name: '应用管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/applyManageInfo.vue`),
+      },
+      {
+        path: '/applyManageInfoManage',
+        name: 'applyManageInfoManage',
+        meta: {
+          name: '应用管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/applyManageInfoManage.vue`),
+      },
+      {
+        path: '/applyManageInfoAPI',
+        name: 'applyManageInfoAPI',
+        meta: {
+          name: '应用管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/applyManageInfoAPI.vue`),
+      },
+      {
+        path: '/applyManageInfoRenew',
+        name: 'applyManageInfoRenew',
+        meta: {
+          name: '应用管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/applyManageInfoRenew.vue`),
+      },
+      {
+        path: '/applyManageInfoPay',
+        name: 'applyManageInfoPay',
+        meta: {
+          name: '应用管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/applyManageInfoPay.vue`),
+      },
+      {
+        path: '/applyManageInfoNewApp',
+        name: 'applyManageInfoNewApp',
+        meta: {
+          name: '应用管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/applyManageInfoNewApp.vue`),
+      },
+      {
+        path: 'addressManage',
+        meta: {
+          name: '地址管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/addressManage.vue`)
       },
       {
         path: 'user-profile',
@@ -131,60 +195,44 @@ export default [
         component: () => import(`@/components/DashViews/UserProfile.vue`)
       },
       {
-        path: 'table-list',
+        path: 'houstonManagement',
         meta: {
-          name: 'Table List',
+          name: '进账管理',
           requiresAuth: true
         },
-        component: () => import(`@/components/DashViews/SimpleTables.vue`)
+        component: () => import(`@/components/DashViews/houstonManagement.vue`)
       },
       {
-        path: 'user-tables',
+        path: 'management',
         meta: {
-          name: 'User Table',
+          name: '出账管理',
           requiresAuth: true
         },
-        component: () => import(`@/components/DashViews/UsersTable.vue`)
+        component: () => import(`@/components/DashViews/management.vue`)
       },
       {
-        path: 'tablestest',
+        path: 'financial-affairs',
         meta: {
-          name: 'Complex Tables test',
+          name: '财务管理',
           requiresAuth: true
         },
-        component: () => import(`@/components/DashViews/TableList.vue`)
+        component: () => import(`@/components/DashViews/financialAffairs.vue`)
       },
       {
-        path: 'typography',
+        path: 'systemSettings',
         meta: {
-          name: 'Typography',
+          name: '系统设置',
           requiresAuth: true
         },
-        component: () => import(`@/components/DashViews/Typography.vue`)
+        component: () => import(`@/components/DashViews/systemSettings.vue`)
       },
       {
-        path: 'icons',
+        path: 'help',
         meta: {
-          name: 'Icons',
+          name: '帮助中心',
           requiresAuth: true
         },
-        component: () => import(`@/components/DashViews/Icons.vue`)
-      },
-      {
-        path: 'maps',
-        meta: {
-          name: 'Maps',
-          requiresAuth: true
-        },
-        component: () => import(`@/components/DashViews/Maps.vue`)
-      },
-      {
-        path: 'notifications',
-        meta: {
-          name: 'Notifications',
-          requiresAuth: true
-        },
-        component: () => import(`@/components/DashViews/Notifications.vue`)
+        component: () => import(`@/components/DashViews/help.vue`)
       }
     ]
   }

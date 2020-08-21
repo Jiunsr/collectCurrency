@@ -1,3 +1,4 @@
+/* eslint-disable */
 @import "material-dashboard/mixins";
 @import "material-dashboard/variables";
 @import "material-dashboard/typography";
@@ -16,3 +17,135 @@
 @import "material-dashboard/fixed-plugin";
 @import "material-dashboard/dropdown";
 @import "material-dashboard/colors";
+
+.no-select{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html, body, ol, ul, li, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select {
+margin: 0;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif PingFangSC-Regular,PingFang SC;
+}
+
+.hide{ display: none!important; }
+.text-white{color: #fff;}
+.text-red{color: #ee0a24;}
+.over-red{color: #EA001D;}
+.text-blue{color: #2d8cf0!important;}
+.text-zi{color: #4B74FF!important;}
+.bor-zi{border-color:#4B74FF!important;}
+.text-default{color: #333333;}
+.text-yellow{color: #f90;}
+.text-gray{color: #999;}
+
+.full-width{ width: 100%!important;}
+.mar-left-10{ margin-left: 10px;}
+.mar-left-15{ margin-left: 15px;}
+.mar-left-20{ margin-left: 20px;}
+
+.fs-12{ font-size: 12px!important; }
+.fs-14{ font-size: 14px!important; }
+.fs-16{ font-size: 16px!important; }
+.fs-18{ font-size: 18px!important; }
+.fs-20{ font-size: 20px!important; }
+.fs-22{ font-size: 22px!important; }
+.fs-24{ font-size: 24px!important; }
+
+.flex-c{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+//弹窗居中
+.vertical-center-modal{
+display: flex;
+align-items: center;
+justify-content: center;
+
+.ivu-modal{
+    top: 0;
+}
+}
+.vertical-center-modal-mini{
+display: flex;
+align-items: center;
+justify-content: center;
+.ivu-modal .ivu-modal-content .ivu-modal-header{
+    border-bottom: none!important;
+}
+.ivu-modal{
+    top: 0;
+}
+}
+
+//button type:text
+.ivu-btn-text:hover{
+background-color: unset;
+}
+.ivu-btn-text:focus{
+box-shadow: unset!important;
+}
+
+//弹窗组件
+.modal-title{
+height: 52px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+.name{
+    font-size: 24px;
+    color: #000;
+}
+.close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+}
+.form-content{
+box-sizing: border-box;
+padding: 10px 14px 20px;
+.ivu-form{
+    
+    //表单下边距
+    .ivu-form-item:last-child {
+    margin-bottom: 0px;
+    }
+    .ivu-form-item{
+    margin-bottom: 34px;
+    .ivu-form-item-label::before{
+        display: none!important;
+        content: ""!important;
+    }
+    }
+}
+}
+.form-footer{
+padding: 15px 12px;
+}
+
+.modal-title.mini{
+height: 30px;
+padding-left: 15px;
+.name{
+    font-size: 16px;
+}
+}
+.form-content.mini{
+box-sizing: border-box;
+padding: 0 15px 15px;
+font-size: 15px;
+color: #3a3a3a;
+}
+.form-footer.mini{
+padding: 0;
+line-height: 20px;
+}

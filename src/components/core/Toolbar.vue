@@ -1,11 +1,7 @@
 <template>
-		<!-- style="background: #424242;" -->
-		<!-- dark -->
 	<v-toolbar
 		id="core-toolbar"
-		style="background: #fff;"
-		flat
-		
+		style="background: #fff;flex:0 0 auto;"
 		height="90"
 	>
 		<div class="v-toolbar-title">

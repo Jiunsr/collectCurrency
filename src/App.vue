@@ -5,16 +5,16 @@
 </template>
 
 <style lang="scss">
+  /* eslint-disable */
 	@import "@/styles/index.scss";
-
-	/* Remove in 1.2 */
+  /* eslint-disable */
 	.v-datatable thead th.column.sortable i {
 		vertical-align: unset;
   }
   .page-title{
     padding: 5px 20px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     .page-item{
       color: #000;
@@ -36,7 +36,7 @@
   }
 </style>
 <script>
-// checks to see if auth jwt token is valid or has expired, if it gets back 401 error log out
+/* eslint-disable */
 export default {
   created: function () {
     this.$http.interceptors.response.use((response) => {
