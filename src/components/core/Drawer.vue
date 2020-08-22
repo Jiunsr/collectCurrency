@@ -66,13 +66,13 @@ export default {
         text: '地址管理'
       },
       {
-        to: '/dashboard/houstonManagement',
+        to: '/dashboard/houstonManage',
         icon: 'mdi-chart-bubble',
         text: '进账管理'
       },
   
       {
-        to: '/dashboard/management',
+        to: '/dashboard/outAccountsManage',
         icon: 'mdi-table-edit',
         text: '出账管理'
       },
