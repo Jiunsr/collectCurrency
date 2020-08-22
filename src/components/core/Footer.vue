@@ -5,29 +5,23 @@
     absolute
     height="82"
     dark
+    style="background:#010827;"
   >
+    <!-- <v-spacer/> -->
     <div class="footer-items">
-      <span
-        v-for="link in links"
-        :key="link.name"
-      >
+      <div class="line-item">
+        <img src="./../../assets/img/shouyeioc_03.jpg" alt="">
+        <img src="./../../assets/img/shouyeioc_05.jpg" alt="">
+        <img src="./../../assets/img/shouyeioc_07.jpg" alt="">
+      </div>
+      <span class="shoubibao">
+        &copy;
+        {{ (new Date()).getFullYear() }}
         <a
-          :href="link.Link"
-          class="tertiary--text footer-links">{{ link.name }}</a>
+          href="https://twitter.com/Cleesus"
+          target="_blank">shoubibao.com</a>
       </span>
     </div>
-    <v-spacer/>
-    <span class="font-weight-light copyright">
-      &copy;
-      {{ (new Date()).getFullYear() }}
-      <a
-        href="https://twitter.com/Cleesus"
-        target="_blank">@cleesus</a>, made with
-      <v-icon
-        color="tertiary"
-        size="17">mdi-heart</v-icon>
-      for a better web
-    </span>
   </v-footer>
 </template>
 
@@ -42,9 +36,32 @@ export default {
   })
 }
 </script>
-
-<style>
+<style lang="stylus">
 #core-footer {
   z-index: 0;
+  .footer-items{
+    display flex
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width 200px
+    margin 0 auto
+    .line-item{
+      img{ cursor: pointer; }
+      img+img{
+        margin-left 10px
+      }
+    }
+    .shoubibao{
+      font-size 14px
+      color #ffffff
+      font-weight 600
+      a{
+        font-size 14px
+        color #ffffff
+        font-weight 600
+      }
+    }
+  }
 }
 </style>

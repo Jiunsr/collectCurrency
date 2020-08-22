@@ -8,6 +8,7 @@
     persistent
     width="260"
     absolute
+    style="background:#1b283d;"
   >
     <v-img
       :src="image"
