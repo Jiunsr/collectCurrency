@@ -28,9 +28,13 @@ Vue.config.productionTip = false
 import 'view-design/dist/styles/iview.css';
 Vue.use(ViewUI);
 
-// import { Button, Table } from 'view-design';
-// Vue.component('Table', Table);
-// Vue.component('Button', Button);
+import VeLine from 'v-charts/lib/line.common';
+import VeMap from 'v-charts/lib/map.common';
+import 'echarts/lib/component/markLine';
+import 'echarts/lib/component/markPoint';
+[VeLine, VeMap].forEach(comp => {
+  Vue.component(comp.name, comp);
+});
 
 Vue.prototype.$http = axios
 // Sets the default url used by all of this axios instance's requests
