@@ -5,110 +5,56 @@
     grid-list-xl 
   >
     <div class="page-title">
-      <div class="page-item">概况</div>
+      <div class="page-item">地址管理</div>
+      <div class="page-item">监控</div>
     </div>
     <v-layout wrap style="width:100%;">
 
       <v-flex
         md12
         sm12
-        lg6
-        class="pl-8 pr-0"
+        lg12
+        class="pl-8 pr-8 pb-8"
       > 
-        <v-card class="mx-auto" height="288" :elevation="4" mar>
+        <v-card class="mx-auto" height="288" :elevation="4">
           <div class="dashboard">
             <div class="fiscalCenter">
               <div class="bg"></div>
-              <div class="fiscalText">资源概况</div>
+              <div class="fiscalText">资源使用</div>
             </div>
             <div class="line"></div>
             <div class="balanceBox">
-              <div class="balance">
-                <div class="money" style="font-size: 26px;">23/</div>
-                <div class="money" style="font-size: 26px;">100</div>
-                <div class="available">地址数量</div>
+              <div class="balance1">
+                <div class="money" style="font-size: 26px;"></div>
+                <div class="money" style="font-size: 26px;"></div>
+                <div class="available"></div>
               </div>
               <div class="line2"></div>
-              <div class="balance">
-                <div class="money" style="font-size: 40px;">9</div>
-                <div class="available">应用数量</div>
-              </div>
-              <div class="line2"></div>
-              <div class="balance">
-                <div class="money" style="font-size: 26px;">23/</div>
-                <div class="money" style="font-size: 26px;">100</div>
-                <div class="available">币种数量</div>
-              </div>
-              <div class="line2"></div>
-              <div class="balance">
-                <div class="money" style="font-size: 18px;">10010/</div>
-                <div class="money" style="font-size: 18px;">￥10000.00</div>
+              <div class="balance1">
+                <div class="money" style="font-size: 26px;">10010/￥10000.00</div>
                 <div class="available">进账资产</div>
               </div>
               <div class="line2"></div>
-              <div class="balance">
-                <div class="money" style="font-size: 18px;">10010/</div>
-                <div class="money" style="font-size: 18px;">￥10000.00</div>
+              <div class="balance1">
+                <div class="money" style="font-size: 26px;">20139/￥2000.00</div>
                 <div class="available">出账资产</div>
               </div>
-            </div>
-          </div>
-          <v-btn small color="#4f6ef7" height="30" width="130px" style="font-size:14px;display:block;margin:10px auto;">购买地址数量</v-btn>
-        </v-card>
-      </v-flex>
-
-      <v-flex
-        md12
-        sm12
-        lg3
-        class="pl-8 pr-4"
-      >  
-        <v-card class="mx-auto" height="288" max-width="100%" :elevation="4">
-          <div class="dashboard">
-            <div class="fiscalCenter">
-              <div class="bg"></div>
-              <div class="fiscalText">待续费</div>
-            </div>
-            <div class="line"></div>
-            <div class="balanceBox">
-              <div class="balance">
-                <div class="money" style="font-size:40px;">100</div>
-                <div class="available" >地址数量</div>
+              <div class="line2"></div>
+              <div class="balance1">
+                <div class="money" style="font-size: 26px;">20139/￥2000.00/</div>
+                <div class="available">到期时间</div>
               </div>
               <div class="line2"></div>
-              <div class="balance">
-                <div class="money" style="font-size:40px;">110</div>
-                <div class="available">应用数量</div>
+              <div class="balance1">
+                <div class="money" style="font-size: 18px;"></div>
+                <div class="money" style="font-size: 18px;"></div>
+                <div class="available"></div>
               </div>
             </div>
           </div>
-          <v-btn small color="#4f6ef7" height="30" width="80px" style="font-size:14px;display:block;margin:10px auto;" @click="toRenewals()">续费</v-btn>
+          <v-btn small color="#4f6ef7" height="30" width="130px" style="font-size:14px;display:block;margin:10px auto;" @click="toRenewals()">续费</v-btn>
         </v-card>
       </v-flex>
-      <v-flex
-        md12
-        sm12
-        lg3
-        class="pr-8 pl-4"
-      >  
-        <v-card class="mx-auto" height="288" max-width="100%" :elevation="4">
-          <div class="dashboard">
-            <div class="fiscalCenter">
-              <div class="bg"></div>
-              <div class="fiscalText">待出账</div>
-            </div>
-            <div class="line"></div>
-            <div class="balanceBox">
-              <div class="balance">
-                <div class="money" style="font-size:40px;">0</div>
-                <div class="available">待出账数量（笔）</div>
-              </div>
-            </div>
-          </div>
-          <v-btn small color="#4f6ef7" height="30" width="80px" style="font-size:14px; display:block;margin:10px auto;">处理</v-btn>
-        </v-card>
-      </v-flex>
-
 			<v-flex
 				md12
 				sm12
@@ -119,13 +65,13 @@
 					<div class="dasText">
             <Tabs :animated="false">
                 <TabPane label="最近20小时">
-                  <ve-line :data="chartData" :settings="{xAxisType:'time'}"  :colors="['#4f6ef7']"></ve-line>
+                    <ve-line :data="chartData" :settings="{xAxisType:'time'}"  :colors="['#4f6ef7']"></ve-line>
                 </TabPane>
                 <TabPane label="最近7天">
-                  <ve-line :data="chartData1" :settings="{xAxisType:'time'}"  :colors="['#4f6ef7']"></ve-line>
+                    <ve-line :data="chartData1" :settings="{xAxisType:'time'}"  :colors="['#4f6ef7']"></ve-line>
                 </TabPane>
                 <TabPane label="最近30天">
-                  <ve-line :data="chartData2" :settings="{xAxisType:'time'}"  :colors="['#4f6ef7']"></ve-line>
+                    <ve-line :data="chartData2" :settings="{xAxisType:'time'}"  :colors="['#4f6ef7']"></ve-line>
                 </TabPane>
             </Tabs>
 					</div>
@@ -372,7 +318,7 @@ export default {
     .fiscalCenter{
       display flex
       align-items center
-      padding 10px 0 10px 20px
+      padding 20px 0 10px 20px
       .bg{
         width 18px
         height 18px
@@ -398,20 +344,19 @@ export default {
     
     .line{
       border-bottom 1px solid #efefef
-      width 91%
+      width 97%
       margin 0 auto
     }
 
     .balanceBox{
       flex 1
       display flex
-      .balance{
+      .balance1{
         width 325px
-        margin 30px auto
+        margin 60px auto 40px
         text-align center
         display flex
         flex-direction column
-        min-height 100px
         .money{
           font-size 36px
           color #4f6ef7
@@ -449,6 +394,7 @@ export default {
     }
   }
 .dasText{
+  height 570px
   .ivu-tabs-bar{
     margin: 16px 0;
     border-bottom none;

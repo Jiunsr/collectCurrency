@@ -2,18 +2,14 @@
     <div class="home">
         <div class="banner">
             <div class="bannerCenter">
-                <div class="bannerImg1">
-                    <img src="./../assets/img/shouye_11.png" alt="">
-                </div>
                 <div class="bannerText">
-                    <div class="text"><span style="font-size: 36px; font-weight: bold; color: #4f6ef7;">区块链数字资产时代</span> 已经到来</div>
+                    <div class="text"><span>区块链数字资产时代</span> 已经到来</div>
                     <div class="text0">即可对接上区块链数字资产</div>
                     <div class="text1">我们提供数字资产的收取管理功能</div>
-                    <v-btn slot="append" color="#4f6ef7" :large="true" style="padding: 12px 30px !important; margin-left: 170px; font-size: 18px; font-weight: bold !important; height: 52px;">免费开始使用</v-btn>
+                    <v-btn slot="append" class="use-btn" color="#4f6ef7" :large="true">免费开始使用</v-btn>
                 </div>
             </div>
             <div class="bannerImg2">
-                <img src="./../assets/img/cpxz_03_03.jpg" alt="">
             </div>
         </div>
 
@@ -256,24 +252,22 @@ export default {
     flex-basis: auto;
     background-color #ffffff
     .bannerCenter{
-        position relative
         display flex
-        flex 1
-        .bannerImg1{
-            padding 213px 0 170px 152px
-            img{
-                width 343px
-            }
-        }
+        background-image url('./../assets/img/shouye_11.png')
+        background-position 15% 50%
+        min-height 600px
+        width 50%
         .bannerText{
-            padding-top 220px
-            position absolute
-            left 333px
+            padding: 170px 0 0 280px;
+            width 100%
             .text{
-                padding-bottom 15px
+                padding-bottom 25px
                 font-size 26px
                 font-weight bold
                 letter-spacing 3.5px
+                span{
+                    font-size: 36px; font-weight: bold; color: #4f6ef7;
+                }
             }
             .text0{
                 font-size 26px
@@ -286,13 +280,20 @@ export default {
                 padding 48px 0 40px 85px
                 letter-spacing 2px
             }
+            .use-btn{
+                padding: 12px 30px !important;
+                margin-left: 170px;
+                font-size: 18px;
+                font-weight: bold !important;
+                height: 52px;
+            }
         }
     }
     .bannerImg2{
-        padding 55px 195px 68px 0
-        img{
-            width 787px
-        }
+        min-height 600px
+        width 50%
+        background-position 20% 50%
+        background-image url('./../assets/img/cpxz_03_03.jpg')
     }
 }
 .noticeNotice{
@@ -536,48 +537,38 @@ export default {
     }
 }
 .home{
-    @media only screen and (max-width: 1264px){
+    @media only screen and (max-width: 1440px){
         .banner{
             .bannerCenter{
-                .bannerImg1{
-                    padding 120px 0 60px 280px
-                    img{
-                        width 300px
-                    }
-                }
+                transform: scale(.90);
+                background-position 0% 50%
                 .bannerText{
-                    padding-top: 140px;
-                    left: 450px;
+                    padding 170px 0 0 190px
+
                     .text{
-                        font-size 22px
-                        padding 0 0 10px 0
-                        span{
-                            font-size 28px !important;
-                        }
+                        padding-bottom 25px
                     }
-                    .text0{
-                        font-size 22px
-                        padding 6px 0 0 65px
-                        letter-spacing 5px
-                    }
-                    .text1{
-                        font-size 20px 
-                        padding 30px 0 25px 70px  
-                        letter-spacing 1px 
-                    }
-                    .v-btn{
-                        margin-left 140px !important;
-                        font-size 16px  !important;
-                        height 45px !important;
-                        width 140px !important;
-                    }
+
                 }
             }
             .bannerImg2{
-                    padding 0px 0px 68px 300px 
-                    img{
-                        width 650px
-                    }
+                background-size 95%
+            }
+        }
+        .noticeNotice{
+            .noticeText{
+                justify-content center
+            }
+        }
+    }
+    @media only screen and (max-width: 1264px){
+        .banner{
+            .bannerCenter{
+                width 100%
+            }
+            .bannerImg2{
+                width 100%
+                background-position 50% 50%
             }
         }
         .noticeNotice{
@@ -644,45 +635,8 @@ export default {
     @media (max-width: 960px){
         .banner{
             .bannerCenter{
-                .bannerImg1{
-                    padding 100px 0 60px 160px
-                    img{
-                        width 270px
-                    }
-                }
-                .bannerText{
-                    padding-top: 105px;
-                    left: 300px;
-                    .text{
-                        font-size 22px
-                        padding 0 0 10px 0
-                        span{
-                            font-size 28px !important;
-                        }
-                    }
-                    .text0{
-                        font-size 22px
-                        padding 6px 0 0 65px
-                        letter-spacing 5px
-                    }
-                    .text1{
-                        font-size 20px 
-                        padding 30px 0 25px 70px  
-                        letter-spacing 1px 
-                    }
-                    .v-btn{
-                        margin-left 140px !important;
-                        font-size 16px  !important;
-                        height 45px !important;
-                        width 140px !important;
-                    }
-                }
             }
             .bannerImg2{
-                    padding 0px 0px 68px 180px 
-                    img{
-                        width 550px
-                    }
             }
         }
         .noticeNotice{
@@ -806,44 +760,42 @@ export default {
     @media (max-width: 600px){
         .banner{
             .bannerCenter{
-                .bannerImg1{
-                    padding 65px 0 50px 80px
-                    img{
-                        width 200px
-                    }
-                }
+                background-position: -80% 50%;
+                background-size 80%
+                min-height 260px !important
+                background none !important
                 .bannerText{
-                    padding-top: 65px;
-                    left: 190px;
+                    padding 50px 0 0 0 !important;
                     .text{
-                        font-size 16px
+                        font-size 12px
+                        padding 0
+                        text-align center
                         span{
-                            font-size 22px !important;
+                            font-size 16px
                         }
                     }
                     .text0{
                         font-size 16px
-                        padding 0 0 0 50px
-                        letter-spacing 6px
+                        padding 0
+                        margin-top 10px
+                        text-align center
                     }
                     .text1{
-                        font-size 15px 
-                        padding 12px 0 10px 45px  
-                        letter-spacing 2.5px 
+                        font-size 16px
+                        padding 0
+                        margin-top 10px
+                        text-align center
                     }
-                    .v-btn{
-                        margin-left 100px !important;
-                        font-size 14px  !important;
-                        height 35px !important;
-                        width 130px !important;
+                    .use-btn{
+                        margin 30px auto 0
+                        display block
                     }
                 }
             }
             .bannerImg2{
-                    padding 0px 0px 30px 50px 
-                    img{
-                        width 500px
-                    }
+                background-size 100%
+                min-height 260px
+                margin-bottom 50px
             }
         }
 

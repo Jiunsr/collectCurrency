@@ -1,54 +1,42 @@
 <template>
-	<div class="center">
-		<div class="head">
-			<div class="logo">
-				<img src="../assets/img/shouye_03.png" alt="">
+	<div class="loginHome">
+		<div class="logIn">
+			<div class="logInCenter">
+				<div class="logInText">
+					<div class="accounts">请输入您的Google验证码</div>
+					<div class="information">	
+					<v-form v-model="valid">
+						<v-container style="padding:0 0 40px;">
+							<v-row>
+								<v-col
+								cols="24"
+								md="12"
+								>
+								<v-text-field
+									v-model="pword"
+									:rules="pwRules"
+									label="密码"
+									placeholder="请输入密码"
+									required
+									class="mt-4"
+								></v-text-field>
+								</v-col>
+								<v-btn 
+									color="#4f6ef7" 
+									:block="true" :large="true" 
+									class="login-btn"
+									@click="submitLogin"
+								>确认</v-btn>
+							</v-row>
+						</v-container>
+					</v-form>
+					</div>
+				</div>
 			</div>
-			<div class="label">
-				<v-tabs
-					class="cd-list"
-					height="45" slider-size="2" slider-width="2"
-					background-color="deep-purple accent-4"
-					v-model="tabsState"
-					slider-color="#4f6ef7"
-					active-class="tabsActive"
-				>
-					<v-tab :to="{name:'home'}">
-						<div class="minw-85">首页</div>
-					</v-tab>
-					<v-tab :to="{name:'product'}">
-						<div class="minw-100">产品价格</div>
-					</v-tab>
-					<v-tab :to="{name:'document'}">
-						<div class="minw-100">开发者文档</div>
-					</v-tab>
-					<v-tab :to="{name:'help'}">
-						<div class="minw-100">帮助中心</div>
-					</v-tab>
-					<v-tab :to="{name:'download'}" style="display:none;">
-						<div class="minw-100">下载中心</div>
-					</v-tab>
-				</v-tabs>
-			</div>
-			<v-btn class="cd-more" color="#4f6ef7" @click="setDrawer">
-				<v-icon>{{mdiFormatListBulleted}}</v-icon>
-			</v-btn>
-			<div class="download" :class="{ active:tabsState==4||tabsState=='/download'}" @click="toDownload">
-				<span>钱包下载</span>
-				<img src="../assets/img/shouye_06.png" alt="" :style="{filter:tabsState==4||tabsState=='/download'?'grayscale(0)':'grayscale(1)'}">
-			</div>
-			<v-btn color="#4f6ef7" class="log-in white--text" style="margin-left:30px;" @click="goLogin">
-				登录
-			</v-btn>
-			<v-btn class="log-in" style="color:#212529!important;border:1px solid #4f6ef7; margin-left: 20px;background-color: #fff;" @click="goReg">
-				注册
-			</v-btn>
-			
 		</div>
-		<router-view/>
 		<v-navigation-drawer
 			v-model="drawer"
-			fixed
+			absolute
 			left
 			temporary
 		>
@@ -72,11 +60,26 @@
 				</v-list-item-group>
 			</v-list>
 		</v-navigation-drawer>
+		<div class="bottom">
+			<div class="bottomCenter">
+				<div class="bottomImg">
+					<img src="./../assets/img/shouyeioc_03.jpg" alt="">
+				</div>
+				<div class="bottomImg">
+					<img src="./../assets/img/shouyeioc_05.jpg" alt="">
+				</div>
+				<div class="bottomImg">
+					<img src="./../assets/img/shouyeioc_07.jpg" alt="">
+				</div>
+			</div>
+			<div class="siteName">© 2020 shoubibao.com</div>
+		</div>
 	</div>
 </template>
 
 <script>
-import { mdiFormatListBulleted, mdiHomeCircle, mdiLayers, mdiTextBox, mdiHelpCircle, mdiDownload, mdiAccountArrowRight, mdiAccountEditOutline } from '@mdi/js';
+import { mdiFormatListBulleted, mdiHomeCircle, mdiLayers, mdiTextBox, mdiHelpCircle, mdiDownload } from '@mdi/js';
+import { mapActions } from 'vuex';
 export default {
 	data: function () {
 		return {
@@ -84,13 +87,11 @@ export default {
 			drawer: false,
 			moreItem: 1,
 			items: [
-				{ title: '首页', icon: mdiHomeCircle, name: 'home' },
-				{ title: '产品价格', icon: mdiLayers, name: 'product' },
-				{ title: '开发者文档', icon: mdiTextBox, name: 'document' },
-				{ title: '帮助中心', icon: mdiHelpCircle, name: 'help' },
-				// { title: '钱包下载', icon: mdiDownload, class:"download-more", name: 'download' },
-				{ title: '登录', icon: mdiAccountArrowRight, class:"download-more", name:'loginHome' },
-				{ title: '注册', icon: mdiAccountEditOutline, class:"download-more", name:'loginHomeReg' },
+				{ title: '首页', icon: mdiHomeCircle },
+				{ title: '产品价格', icon: mdiLayers },
+				{ title: '开发者文档', icon: mdiTextBox },
+				{ title: '帮助中心', icon: mdiHelpCircle },
+				{ title: '钱包下载', icon: mdiDownload, class:"download-more" },
 			],
 			errorMessages: 'Incorrect login info',
 			snackbar: false,
@@ -116,37 +117,28 @@ export default {
 			tabsState: 0
 		}
 	},
-	watch: {
-		$route:{
-			immediate: true,
-			handler(route){
-				let names = ['home', 'product', 'document', 'help', 'download'];
-				if(names.includes(route.name)){
-					this.tabsState = names.indexOf(route.name);
-					console.warn({tabs: this.tabsState});
-				}
-			}
-		}
-	},
   // Sends action to Vuex that will log you in and redirect to the dash otherwise, error
 	methods: {
+		...mapActions([ 'login' ]),
 		goReg(){
-			this.$router.push({ name:'loginHomeReg' });
-		},
-		goLogin(){
-			this.$router.push({ name:'loginHome' });
+			this.$router.push({ path:'/LoginHomeReg' });
 		},
 		setDrawer(){
 			this.drawer = !this.drawer;
 		},
 		openMoreItem(item){
-			console.warn({item})
-			let name = item.name;
-			this.$router.push({ name });
 			this.setDrawer();
+			console.warn({item})
 		},
-		toDownload(){
-			this.$router.push({ name:'download' });
+		submitLogin(){
+			let phone = this.phone;
+			let pword = this.pword;
+			let param = {phone, pword}
+			this.login(param).then((result) => {
+				this.$router.push({ name:"console" });
+			}).catch((err) => {
+				console.warn(err);
+			});
 		},
 	},
 	metaInfo () {
@@ -157,21 +149,18 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+html,body {
+	height 100%
+}
+.center{
+	height 100%
+}
 @media only screen and (max-width: 1264px){
-	.label{
+	.cd-list{
 		display none 
 	}
 	.cd-more{
 		display block!important
-	}
-	.download-more{
-		display flex!important
-	}
-	.download{
-		display none!important
-	}
-	.log-in{
-		display none;
 	}
 }
 @media (max-width: 960px){
@@ -204,9 +193,6 @@ export default {
 		display none!important
 	}
 }
-.v-navigation-drawer{
-	z-index 999
-}
 .download-more{
 	display none
 }
@@ -220,22 +206,16 @@ export default {
 	margin-top 48px
 }
 .minw-100{
-	min-width 90px
-}
-.minw-85{
-	min-width 50px
+	min-width 100px
 }
 .tabsActive{
 	color #000
 	font-weight bold
 }
-.center{
+.loginHome{
 	font-family: Arial, Helvetica, sans-serif;
-	padding-top 80px
 	box-sizing border-box
 	.head{
-		box-sizing border-box
-		z-index 20
 		position fixed
 		top 0
 		width 100%
@@ -247,6 +227,7 @@ export default {
 		box-shadow: 0 4px 10px #e5e5e5;
 		background-color: #fff;
 		margin-bottom: 20px;
+		width: 100%;
 		.logo{
 			display flex
 			justify-content center
@@ -257,8 +238,6 @@ export default {
 		}
 		.label{
 			flex: 1;
-			padding 20px 0 20px 25px
-			box-sizing border-box
 			li{
 				list-style: none;
 				display: inline-block;
@@ -266,22 +245,6 @@ export default {
 				padding: 0 70px 0 0;
 				font-size: 16px;
 			}
-			.v-tabs{
-				.v-tabs-bar{
-					// height: 90px;
-					.v-slide-group__content{
-						.v-tabs-slider-wrapper{
-							height 2px
-							left 15px
-							width 100px
-							bottom 18px
-						}
-					}
-				}
-			}
-		}
-		.download.active{
-			color #4f6ef7
 		}
 		.download{
 			cursor pointer
@@ -314,7 +277,7 @@ export default {
 				width: 520px;
 				// height: 550px;
 				box-shadow: 0 4px 10px #e5e5e5;
-				margin :133px 0 240px 0;
+				margin :70px 0 0 0;
 				.accounts{
 					font-size: 30px;
 					letter-spacing: 3px;
@@ -340,6 +303,33 @@ export default {
 					}
 				}
 			}
+		}
+	}
+
+	.bottom{
+		position fixed
+		width 100%
+		bottom 0
+		left 0
+		background-color: #000829;
+		.bottomCenter{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.bottomImg{
+				padding: 15px 5px 5px;
+				display flex
+				img{
+					width: 27px;
+					height: 27px;
+				}
+			}
+		}
+		.siteName{
+			text-align: center;
+			font-size: 12px;
+			color: #fff;
+			padding-bottom 3px
 		}
 	}
 }

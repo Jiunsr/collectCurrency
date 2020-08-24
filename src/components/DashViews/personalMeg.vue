@@ -7,7 +7,7 @@
       justify-center
       align-center
     >
-      帮助中心
+      消息
     </v-layout>
   </v-container>
 </template>

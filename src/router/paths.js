@@ -89,6 +89,15 @@ export default [
         },
         component: () => import(`@/views/LoginHome.vue`),
       },
+      {
+        path: '/LoginHomeOnceAgain',
+        name: 'LoginHomeOnceAgain',
+        meta: {
+          name: '再次验证',
+          requiresAuth: false
+        },
+        component: () => import(`@/views/LoginHomeOnceAgain.vue`),
+      },
     ]
   },
   // add any extra routes that you want rendered in the dashboard as a child below. Change toolbar names here
@@ -109,7 +118,7 @@ export default [
     component: () => import(`@/views/DashboardView.vue`),
     children: [
       {
-        path: 'console',
+        path: '/dashboard/console',
         name: 'console',
         meta: {
           name: '概况',
@@ -118,6 +127,7 @@ export default [
       },
       {
         path: 'applyManage',
+        name: 'applyManage',
         meta: {
           name: '应用管理',
           requiresAuth: true
@@ -180,6 +190,7 @@ export default [
       },
       {
         path: 'addressManage',
+        name: 'addressManage',
         meta: {
           name: '地址管理',
           requiresAuth: true
@@ -187,31 +198,81 @@ export default [
         component: () => import(`@/components/DashViews/addressManage.vue`)
       },
       {
-        path: 'user-profile',
+        path: '/addressManageCreate',
+        name: 'addressManageCreate',
         meta: {
-          name: '用户资料',
+          name: '地址管理',
           requiresAuth: true
         },
-        component: () => import(`@/components/DashViews/UserProfile.vue`)
+        component: () => import(`@/components/DashViews/addressManageCreate.vue`)
       },
       {
-        path: 'houstonManagement',
+        path: '/addressManageMonitor',
+        name: 'addressManageMonitor',
+        meta: {
+          name: '地址管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/addressManageMonitor.vue`)
+      },
+      {
+        path: 'houstonManage',
+        name: 'houstonManage',
         meta: {
           name: '进账管理',
           requiresAuth: true
         },
-        component: () => import(`@/components/DashViews/houstonManagement.vue`)
+        component: () => import(`@/components/DashViews/houstonManage.vue`)
       },
       {
-        path: 'management',
+        path: '/houstonManageInfo',
+        name: 'houstonManageInfo',
+        meta: {
+          name: '进账管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/houstonManageInfo.vue`)
+      },
+      {
+        path: '/houstonManageInfoMeg',
+        name: 'houstonManageInfoMeg',
+        meta: {
+          name: '进账管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/houstonManageInfoMeg.vue`)
+      },
+
+      {
+        path: 'outAccountsManage',
+        name: 'outAccountsManage',
         meta: {
           name: '出账管理',
           requiresAuth: true
         },
-        component: () => import(`@/components/DashViews/management.vue`)
+        component: () => import(`@/components/DashViews/outAccountsManage.vue`)
+      },
+      {
+        path: '/outAccountsManageInfo',
+        name: 'outAccountsManageInfo',
+        meta: {
+          name: '出账管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/outAccountsManageInfo.vue`)
+      },
+      {
+        path: '/outAccountsManageInfoMeg',
+        name: 'outAccountsManageInfoMeg',
+        meta: {
+          name: '出账管理',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/outAccountsManageInfoMeg.vue`)
       },
       {
         path: 'financial-affairs',
+        name: 'financial-affairs',
         meta: {
           name: '财务管理',
           requiresAuth: true
@@ -220,6 +281,7 @@ export default [
       },
       {
         path: 'systemSettings',
+        name: 'systemSettings',
         meta: {
           name: '系统设置',
           requiresAuth: true
@@ -228,12 +290,49 @@ export default [
       },
       {
         path: 'help',
+        name: 'help',
         meta: {
           name: '帮助中心',
           requiresAuth: true
         },
         component: () => import(`@/components/DashViews/help.vue`)
-      }
+      },
+      {
+        path: '/dashboard/personal',
+        name: 'personal',
+        meta: {
+          name: '个人中心',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/personal.vue`)
+      },
+      {
+        path: '/dashboard/personalMeg',
+        name: 'personalMeg',
+        meta: {
+          name: '消息',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/personalMeg.vue`)
+      },
+      {
+        path: '/dashboard/personalWorkorder',
+        name: 'personalWorkorder',
+        meta: {
+          name: '工单',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/personalWorkorder.vue`)
+      },
+      {
+        path: '/dashboard/personalDownPackage',
+        name: 'personalDownPackage',
+        meta: {
+          name: '钱包下载',
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashViews/personalDownPackage.vue`)
+      },
     ]
   }
 ]

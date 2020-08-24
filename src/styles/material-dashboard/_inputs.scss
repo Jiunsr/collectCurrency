@@ -5,6 +5,11 @@
 .input--is-focused .v-input__control .v-input__slot:after{
   border-color: red !important;
 }
+.input--is-focused{
+  background-color: blue!important;
+  color: blue!important;
+  border-color: blue!important;
+}
 
 .v-text-field__slot {
   input {
@@ -15,8 +20,12 @@
 
   .v-label {
     color: $label-color !important;
-    font-size: $font-size-default;
+    // font-size: $font-size-default;
     font-weight: $font-weight-base;
+  }
+  .v-label{
+    top: 0;
+    left: -5px!important;
   }
 }
 

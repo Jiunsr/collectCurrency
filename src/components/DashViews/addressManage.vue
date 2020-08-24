@@ -2,6 +2,7 @@
 	<v-container
 		fluid
 		grid-list-xl 
+        class="addressManage"
 	>
 	
 		<div class="page-title">
@@ -20,14 +21,17 @@
 							<div class="recordBg"></div>
 							<div class="recordText">地址管理</div>
 							<div class="Text">
-                <Input v-model="value" placeholder="请输入关键词" style=" width: 300px; margin:0 10px" />
+                                <Input v-model="value" placeholder="请输入关键词" style=" width: 300px; margin:0 10px" />
 								<v-btn width="90" class="mr-4" color="#4f6ef7" style="height: 32px;">搜索</v-btn>
-								<v-btn width="120" class="mr-4" color="#4f6ef7" style="height: 32px;">更新</v-btn>
-								<v-btn width="120" color="#4f6ef7" style="height: 32px;">创建新地址</v-btn>
+								<v-btn width="120" class="mr-4" color="#4f6ef7" style="height: 32px;" @click="renewData" :loading="loading">更新</v-btn>
+								<v-btn width="120" color="#4f6ef7" style="height: 32px;" :to="{name:'addressManageCreate'}">创建新地址</v-btn>
 							</div>
 						</div>
 					</div>
 					<Table stripe :columns="columns" :data="list" :loading="loading"></Table>
+                    <div class="page-box">
+						<Page :total="100" :current.sync="current" />
+					</div>
 				</v-card>
 			</v-flex>
 		</v-layout>
@@ -40,7 +44,8 @@ export default {
 	data () {
 		return {
             value: '',
-			page: 1,
+            page: 1,
+            current: 2,
 			pageCount: 1,
 			itemsPerPage: 10,
 			loading: false,
@@ -140,7 +145,16 @@ export default {
                             class: ['text-blue'],
                             on: {
                                 click: () => {
-                                    // this.$router.push({name:'contractTaskView', query:{id:params.row.id}});
+									this.$Modal.confirm({
+										title: '温馨提醒',
+										content: '确认要停止吗',
+										onOk: () => {
+											this.$Modal.remove();
+										},
+										onCancel: () => {
+											console.warn("取消")
+										}
+									});
                                 }
                             }
                         }, '停止');
@@ -160,7 +174,7 @@ export default {
                             class: ['text-blue'],
                             on: {
                                 click: () => {
-									
+									this.$router.push({ name:'addressManageMonitor' });
                                 }
                             }
 						}, '监控');
@@ -169,7 +183,9 @@ export default {
                             class: ['text-blue'],
                             on: {
                                 click: () => {
-									
+                                    let url = '1LL1KA2Z6Z1XJDP JBIR4B9RH476XKQB1IQ'
+                                    let name = '';
+									this.$router.push({ name:'applyManageInfoRenew', query:{ appName: `${url} ${name}` } })
                                 }
                             }
 						}, '续费');
@@ -186,6 +202,12 @@ export default {
 	methods: {
 		complete (index) {
 			this.list[index] = !this.list[index]
+        },
+		renewData(){
+			this.loading = true;
+			setTimeout(()=>{
+				this.loading = false;
+			},500);
 		}
 	}
 }

@@ -1,6 +1,5 @@
 <template>
 	<div class="rge">
-		
 		<div class="logIn">
 			<div class="logInCenter">
 				<div class="logInText">
@@ -9,11 +8,9 @@
 						<v-form v-model="valid">
 							<v-container style="padding:0;">
 								<v-row>
-									<v-col
-									class="mt-4"
-									>
+									<v-col>
 									<v-text-field
-										v-model="firstname"
+										v-model="phone"
 										:rules="phoneRules"
 										label="手机"
 										placeholder="请输入手机号"
@@ -22,26 +19,26 @@
 									</v-col>
 
 									<v-col
-									cols="24"
-									md="12"
+										cols="24"
+										md="12"
 									>
-									<v-text-field
-										v-model="firstname"
-										:rules="vecRules"
-										label="验证码"
-										placeholder="请输入验证码"
-										required
-										class="mt-4"
-									>
-									<v-btnt slo="append" color="#4f6ef7">获取验证码</v-btnt>
-									</v-text-field>
+										<v-text-field
+											v-model="code"
+											:rules="vecRules"
+											label="验证码"
+											placeholder="请输入验证码"
+											required
+											class="mt-4"
+										>
+											<v-btn slot="append" color="#4f6ef7" width="120" height="38">获取验证码</v-btn>
+										</v-text-field>
 									</v-col>
 									<v-col
 									cols="24"
 									md="12"
 									>
 									<v-text-field
-										v-model="lastname"
+										v-model="pword"
 										:rules="pwRules"
 										label="密码"
 										placeholder="请输入密码"
@@ -90,19 +87,20 @@ export default {
 			showPassword: false,
 			
 			valid: false,
-			firstname: '',
-			lastname: '',
+			phone: '',
+			code: '',
+			pword: '',
 			phoneRules: [
 				v => !!v || '请输入手机号',
-				v => v.length <= 10 || 'Name must be less than 10 characters',
+				v => v.length <= 11 || 'Name must be less than 11 characters',
 			],
 			pwRules: [
 				v => !!v || '请输入密码',
-				v => v.length <= 10 || 'Name must be less than 10 characters',
+				v => v.length <= 6 || 'Name must be less than 6 characters',
 			],
 			vecRules: [
 				v => !!v || '请输入验证码',
-				v => v.length <= 10 || 'Name must be less than 10 characters',
+				v => v.length <= 8 || 'Name must be less than 8 characters',
 			],
 			email: '',
 			emailRules: [
@@ -135,7 +133,28 @@ export default {
 	}
 }
 @media (max-width: 600px){
-	.test-3{
+	.logInCenter{
+		padding 20px
+		box-sizing border-box
+		.logInText{
+			.accounts{
+				padding 30px 0!important
+				font-size 22px!important
+			}
+			margin 0!important
+			.information{
+				padding 0 20px!important
+			}
+		}
+		padding-bottom 100px
+	}
+	.login-btn{
+		margin-top 20px!important
+	}
+	.download-more{
+		display flex!important
+	}
+	.download{
 		display none!important
 	}
 }

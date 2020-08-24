@@ -16,15 +16,43 @@
 				lg12
 				class="pl-8 pr-8 pb-8"
 			>  
-				<v-card class="mx-auto pl-5 pr-5" max-width="100%" :elevation="6">
-					<div class="usersTable">
+				<v-card class="mx-auto pl-5 pr-5 pb-5" max-width="100%" :elevation="6" height="650">
+					<div class="apiTable">
 						<div class="recordCenter">
 							<div class="recordBg"></div>
 							<div class="recordText">API管理</div>
 						</div>
 					</div>
-					<div class="line"></div>
-					<Table stripe :columns="columns" :data="list" :loading="loading"></Table>
+					<div class="ee"></div>
+					<div class="single">
+						<Form label-position="right" :label-width="100">
+							<FormItem label="ID：" style="margin-top:50px">
+								<Input></Input>
+							</FormItem>
+							<FormItem label="名称：">
+								<Input></Input>
+							</FormItem>
+							<FormItem label="APIKEY：">
+								<Row>
+									<Col span="18">
+										<Input type="text"></Input>
+									</Col>
+									<Col span="4">
+										<v-btn width="100" color="#4f6ef7" style="height: 32px;margin:0">重置</v-btn>
+									</Col>
+								</Row>
+							</FormItem>
+						</Form>
+					</div>
+					<div class="cc"></div>
+					<div class="data-list">
+						<div class="list">
+							<div class="listText">API白名单</div>
+							<v-btn width="100" color="#4f6ef7">添加</v-btn>
+						</div>
+						<Table stripe :columns="columns" :data="list" :loading="loading" align="center"></Table>
+					</div>
+					<v-btn width="120" color="#4f6ef7" style="height: 35px;margin: 40px auto 0;display: block;">确定</v-btn>
 				</v-card>
 			</v-flex>
 		</v-layout>
@@ -41,106 +69,24 @@ export default {
 			itemsPerPage: 10,
 			loading: false,
 			list: [
-				{ number:8, areaNum:6, area1:100, area2:200, payNum1:30, payNum2:60, time1:'2020-05-08', time2:'2020-05-27', status: 0},
-				{ number:8, areaNum:6, area1:100, area2:200, payNum1:30, payNum2:60, time1:'2020-05-08', time2:'2020-05-27', status: 0},
-				{ number:8, areaNum:6, area1:100, area2:200, payNum1:30, payNum2:60, time1:'2020-05-08', time2:'2020-05-27', status: 0},
+				{ number:'TEST1', payNum1:'111.193.210.180,111.193.210.180'},
+				{ number:'TEST1', payNum1:'111.193.210.180,111.193.210.180'},
+				{ number:'TEST1', payNum1:'111.193.210.180,111.193.210.180'},
 			],
             columns: [
                 {
-                    title: '名称',
-                    key: 'name',
-					minWidth: 250,
-					className: "bg-blue",
-                    render: (h, param) => {
-						let url = param.row.url || 'i-JDJC43AZ'
-						let name = param.row.name || '点滴上链';
-                        return [
-							h('a', {
-								on:{
-									click: ()=>{
-										console.warn("跳转");
-										this.$router.push({ name:'applyManageInfo', query:{ appName: `${url} ${name}` } })
-									}
-								}
-							}, url),
-							h('div', {}, name),
-						]
-                    },
-                },
-                {
-                    title: '币种数量',
+                    title: '备注',
                     key: 'number',
-					minWidth: 130,
+					minWidth: 10,
 					className: "bg-blue",
 					align:'center'
                 },
                 {
-                    title: '地址数量',
-                    key: 'areaNum',
-					minWidth: 130,
-					className: "bg-blue",
-					align:'center',
-					render(h, param) {
-						let area1 = param.row.area1
-						let area2 = param.row.area2
-						return h('span',{}, `${area1}/${area2}`)
-					},
-                },
-                {
-                    title: '进账笔数',
+                    title: 'IP列表',
                     key: 'payNum1',
-					minWidth: 130,
+					minWidth: 10,
 					className: "bg-blue",
-					align:'center',
                 },
-                {
-                    title: '出账笔数',
-                    key: 'payNum2',
-					minWidth: 160,
-					className: "bg-blue",
-					align:'center',
-                },
-                {
-                    title: '时间信息',
-                    key: 'status',
-					minWidth: 250,
-					className: "bg-blue",
-                    render: (h, param) => {
-						let { time1, time2 } = param.row;
-                        return h('span', {}, `${time1}创建 - ${time2}到期`)
-                    },
-                },
-                {
-                    title: '状态',
-                    key: 'status',
-					minWidth: 130,
-					className: "bg-blue",
-					align:'center',
-					filters: [
-						{
-							label: '进行中',
-							value: 1
-						},
-						{
-							label: '已停止',
-							value: 2
-						},
-						{
-							label: '已到期',
-							value: 3
-						}
-					],
-					filterMultiple: false,
-					filterMethod (value, row) {
-						// TODO
-						console.warn(value);
-						return true
-					},
-                    render: (h, param) => {
-						let option = ['进行中', '已停止', '已到期'];
-                        return h('span', {}, option[param.row.status])
-                    },
-                }
             ],
 		}
 	},
@@ -158,7 +104,7 @@ export default {
 		color #fff !important
 		background-color #4F6EF7 !important
 	}
-	.usersTable{
+	.apiTable{
 		.recordCenter{
 			display flex
 			align-items center
@@ -204,10 +150,40 @@ export default {
 			}
 		}
 	}
-	.line{
-		border-bottom 1px solid #efefef
+	.ee{
+		border-bottom 1px solid #d7d7d7
 		width 97%
 		margin 0 auto
+	}
+	.cc{
+		border-bottom 1px solid #d7d7d7
+		width 800px
+		margin 0 auto
+	}
+	.single{
+		width 600px
+		margin 0 auto
+		.ivu-input{
+			max-width: 360px;
+    		height: 35px;
+		}
+	}
+	.data-list{
+		max-width 800px
+		margin 0 auto
+		.list{
+			display flex
+			align-items center
+			.listText{
+				flex 1
+				font-size 16px
+				font-weight bold
+			}
+			.v-btn {
+				height 30px
+				margin 20px 0
+			}
+		}
 	}
 }
 	

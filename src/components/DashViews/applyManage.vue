@@ -27,6 +27,9 @@
 						</div>
 					</div>
 					<Table stripe :columns="columns" :data="list" :loading="loading"></Table>
+					<div class="page-box">
+						<Page :total="100" :current.sync="current" />
+					</div>
 				</v-card>
 			</v-flex>
 		</v-layout>
@@ -38,7 +41,7 @@ export default {
 	name: 'Dashboard',
 	data () {
 		return {
-			page: 1,
+			current: 2,
 			pageCount: 1,
 			itemsPerPage: 10,
 			loading: false,
@@ -231,7 +234,7 @@ export default {
 			this.loading = true;
 			setTimeout(()=>{
 				this.loading = false;
-			}, 1000);
+			},500);
 		}
 	}
 }

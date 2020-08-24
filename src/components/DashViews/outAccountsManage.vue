@@ -28,6 +28,9 @@
 						</div>
 					</div>
 					<Table stripe :columns="columns" :data="list" :loading="loading"></Table>
+          <div class="page-box">
+						<Page :total="100" :current.sync="current" />
+					</div>
 				</v-card>
 			</v-flex>
 		</v-layout>
@@ -41,7 +44,8 @@ export default {
 		return {
       value: '',
 			page: 1,
-			pageCount: 1,
+      pageCount: 1,
+      current: 2,
 			itemsPerPage: 10,
 			loading: false,
 			list: [
@@ -166,7 +170,7 @@ export default {
                             class: ['text-blue'],
                             on: {
                                 click: () => {
-                                    // this.$router.push({name:'contractTaskView', query:{id:params.row.id}});
+                                    this.$router.push({ name:'outAccountsManageInfo' });
                                 }
                             }
                         }, '详情');
@@ -176,7 +180,7 @@ export default {
                             class: ['text-blue'],
                             on: {
                                 click: () => {
-									
+                                  this.$router.push({ name:'outAccountsManageInfoMeg' });
                                 }
                             }
 						}, '通知');

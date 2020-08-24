@@ -24,53 +24,6 @@
 				layout
 				py-2
 			>
-				<!-- <router-link
-					v-ripple
-					class="toolbar-items"
-					to="/">
-					<v-icon color>mdi-home</v-icon>
-				</router-link>
-				<v-menu
-					bottom
-					left
-					content-class
-					offset-y
-					transition="slide-y-transition">
-					<router-link
-						v-ripple
-						slot="activator"
-						class="toolbar-items"
-						to="/dashboard/notifications"
-					>
-						<v-badge
-							color="error"
-							overlap>
-							<template slot="badge">{{ notifications.length }}</template>
-							<v-icon color>mdi-bell</v-icon>
-						</v-badge>
-					</router-link>
-					<v-card>
-						<v-list dense>
-							<v-list-tile
-								v-for="notification in notifications"
-								:key="notification"
-								@click="onClick">
-								<v-list-tile-title v-text="notification"/>
-							</v-list-tile>
-						</v-list>
-					</v-card>
-				</v-menu>
-				<router-link
-					v-ripple
-					class="toolbar-items"
-					to="/dashboard/user-profile">
-					<v-icon color>mdi-account</v-icon>
-				</router-link> -->
-				
-				<div class="download active" @click="toDownload">
-					<span>钱包下载</span>
-					<v-img :src="downLoad" max-height="16" max-width="15" class="ml-2"/>
-				</div>
 
 				<v-tabs
 					class="cd-list"
@@ -80,16 +33,22 @@
 					slider-color="#4f6ef7"
 					active-class="tabsActive"
 				>
-					<v-tab >
+					<v-tab @click="toPage(0)">
+						<div class="download active" >
+							<span>钱包下载</span>
+							<v-img :src="downLoad" max-height="16" max-width="15" class="ml-2"/>
+						</div>
+					</v-tab>
+					<v-tab  @click="toPage(1)">
 						<div class="minw-100">工单</div>
 					</v-tab>
-					<v-tab >
+					<v-tab @click="toPage(2)">
 						<div class="minw-100">消息</div>
 					</v-tab>
-					<v-tab >
+					<v-tab @click="toPage(3)">
 						<div class="minw-100">个人中心</div>
 					</v-tab>
-					<v-tab >
+					<v-tab @click="toPage(4)">
 						<div class="minw-100">控制台</div>
 					</v-tab>
 				</v-tabs>
@@ -106,20 +65,25 @@
 import { mapMutations, mapGetters } from 'vuex'
 
 export default {
-	data: () => ({
-    	downLoad: require('@/assets/img/shouye_06.png'),
-		notifications: [
-			'Mike, Thanos is coming',
-			'5 new avengers joined the team',
-			"You're now friends with Capt",
-			'Another Notification',
-			'Another One - Dj Khalid voice'
-		],
-		title: "",
-		responsive: false,
-		responsiveInput: false,
-		tabsState: 3,
-	}),
+	data: () => {
+		return {
+			downLoad: require('@/assets/img/shouye_06.png'),
+			notifications: [
+				'Mike, Thanos is coming',
+				'5 new avengers joined the team',
+				"You're now friends with Capt",
+				'Another Notification',
+				'Another One - Dj Khalid voice'
+			],
+			title: "",
+			responsive: false,
+			responsiveInput: false,
+			tabsState: 4,
+			pathOption: [ 'personalDownPackage', 'personalWorkorder', 'personalMeg',  'personal', "console"],
+			pathAddres: ["/dashboard/personalDownPackage", "/dashboard/personalWorkorder", "/dashboard/personalMeg", "/dashboard/personal", "/dashboard/console"],
+			routeName: null,
+		}
+	},
 
 	computed: {
 		...mapGetters(['authorized'])
@@ -130,8 +94,19 @@ export default {
 			immediate: true,
 			handler(route){
 				this.title = route.meta.name;
+				this.notChange = false;
+				console.warn("测试:", route.name, route);
+				
+				if(route.name){
+					this.routeName = route.name;
+					if(this.pathOption.includes(route.name)){
+						this.tabsState = this.pathOption.indexOf(route.name);
+					}else {
+						this.tabsState = 4;
+					}
+				}
 			}
-		}
+		},
 	},
 
 	mounted () {
@@ -164,8 +139,8 @@ export default {
 				this.$router.push('/')
 			})
 		},
-		toDownload(){
-			this.$router.push({ name:'download' });
+		toPage(status){
+			this.$router.push(this.pathAddres[status])
 		},
 	}
 }

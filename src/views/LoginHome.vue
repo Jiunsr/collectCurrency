@@ -43,7 +43,7 @@
 						</v-row>
 						</v-container>
 						<div class="bookInformation">
-							<div class="thatLog">未注册？<a style="color:#4f6ef7; font-weight: bold;">立即注册</a></div>
+							<div class="thatLog">未注册？<a style="color:#4f6ef7; font-weight: bold;" @click="toReg()">立即注册</a></div>
 							<div class="forget">忘记密码?</div>
 						</div>
 					</v-form>
@@ -148,14 +148,18 @@ export default {
 			console.warn({item})
 		},
 		submitLogin(){
+			this.$router.push({ name:"LoginHomeOnceAgain" });
+			return
 			let phone = this.phone;
 			let pword = this.pword;
 			let param = {phone, pword}
 			this.login(param).then((result) => {
-				this.$router.push({ name:"console" });
 			}).catch((err) => {
 				console.warn(err);
 			});
+		},
+		toReg(){
+			this.$router.push({ name:"loginHomeReg" });
 		},
 	},
 	metaInfo () {

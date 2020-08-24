@@ -23,25 +23,25 @@
         <v-list style="background:#fff;" height="90" class="d-flex justify-center align-center">
           <v-img :src="logo" height="100%" max-height="42" max-width="92" />
         </v-list>
-        <!-- <v-divider/> -->
         <v-list-item
           v-for="(link, i) in links"
           :key="i"
           :to="link.to"
           :active-class="color"
+          color="#86a1fe"
         >
           <v-list-item-action>
-            <v-icon>{{ link.icon }}</v-icon>
+            <v-icon style="color:#fff;">{{ link.icon }}</v-icon>
           </v-list-item-action>
-          <v-list-item-action-text v-text="link.text" />
+          <v-list-item-action-text style="color:#fff;" v-text="link.text" />
         </v-list-item>
       </v-layout>
     </v-img>
   </v-navigation-drawer>
 </template>
 
-<script>
-// Utilities
+<script> 
+import { mdiChartBox, mdiCube, mdiMapMarker, mdiDatabaseImport, mdiDatabaseExport, mdiCashUsd, mdiCogBox, mdiLightbulbOn } from '@mdi/js';
 import {
   mapMutations,
   mapState
@@ -53,43 +53,43 @@ export default {
     links: [
       {
         to: '/dashboard/console',
-        icon: 'mdi-view-dashboard',
+        icon: mdiChartBox,
         text: '概况'
       },
       {
         to: '/dashboard/applyManage',
-        icon: 'mdi-account',
+        icon: mdiCube,
         text: '应用管理'
       },
       {
         to: '/dashboard/addressManage',
-        icon: 'mdi-format-font',
+        icon: mdiMapMarker,
         text: '地址管理'
       },
       {
         to: '/dashboard/houstonManage',
-        icon: 'mdi-chart-bubble',
+        icon: mdiDatabaseImport, 
         text: '进账管理'
       },
   
       {
         to: '/dashboard/outAccountsManage',
-        icon: 'mdi-table-edit',
+        icon: mdiDatabaseExport,
         text: '出账管理'
       },
       {
         to: '/dashboard/financial-affairs',
-        icon: 'mdi-table-edit',
+        icon: mdiCashUsd,
         text: '财务管理'
       },
       {
         to: '/dashboard/systemSettings',
-        icon: 'mdi-map-marker',
+        icon: mdiCogBox,
         text: '系统设置'
       },
       {
         to: '/dashboard/help',
-        icon: 'mdi-bell',
+        icon: mdiLightbulbOn,
         text: '帮助中心'
       }
     ],
@@ -149,6 +149,9 @@ export default {
       margin-bottom: 30px !important;
       padding-left: 15px;
       padding-right: 15px;
+    }
+    .v-list .v-list-item--active{
+      background: #344b9b!important;
     }
   }
 </style>

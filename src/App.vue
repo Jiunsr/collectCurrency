@@ -11,6 +11,22 @@
 	.v-datatable thead th.column.sortable i {
 		vertical-align: unset;
   }
+	input[disabled="disabled"]{
+		color: #333!important;
+	}
+  .v-text-field > .v-input__control > .v-input__slot:after{
+    border-color: #4f6ef7;
+  }
+  .theme--light.v-messages.error--text{
+    color: #ff5252;
+  }
+  .v-text-field.error--text{
+    color: #ff5252;
+  }
+  .v-application .error--text {
+      color: #ff5252 !important;
+      caret-color: #ff5252 !important;
+  }
   .page-title{
     padding: 5px 20px;
     display: flex;
@@ -31,6 +47,17 @@
         font-size: 16px;
         display: inline-block;
         margin-right: 10px;
+      }
+    }
+  }
+  .page-box{
+    padding: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .ivu-page{
+      .ivu-page-prev,.ivu-page-next{
+        line-height: 25px;
       }
     }
   }

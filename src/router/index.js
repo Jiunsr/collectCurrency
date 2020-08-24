@@ -18,11 +18,15 @@ import Meta from 'vue-meta'
 import paths from './paths'
 
 Vue.use(Router)
+const originalPush = Router.prototype.push
+Router.prototype.push = function push (location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 // Create a new router
 const router = new Router({
   base: '/',
-  mode: 'history',
+  // mode: 'history',
   routes: paths,
 
   scrollBehavior (to, from, savedPosition) {

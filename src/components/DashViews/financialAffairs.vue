@@ -106,7 +106,7 @@
         lg12
         class="pl-8 pr-8 pb-8 pt-5"
       >  
-        <v-card class="mx-auto" height="400" max-width="100%" :elevation="6">
+        <v-card class="mx-auto pa-6" max-width="100%" :elevation="6">
             <div class="recordCenter">
               <div class="recordBg"></div>
               <div class="recordText">消费记录</div>
@@ -120,6 +120,7 @@
               </div>
             </div>
             <div class="line"></div>
+            <ve-line :data="chartData" :settings="{xAxisType:'time'}"  :colors="['#4f6ef7']"></ve-line>
         </v-card>
       </v-flex>
     </v-layout>
@@ -131,139 +132,30 @@ export default {
   name: 'Dashboard',
   data () {
     return {
-      dailySalesChart: {
-        data: {
-          labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-          series: [
-            [12, 17, 7, 17, 23, 18, 38]
-          ]
-        },
-        options: {
-          lineSmooth: this.$chartist.Interpolation.cardinal({
-            tension: 0
-          }),
-          low: 0,
-          high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-          chartPadding: {
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0
-          }
-        }
-      },
-      dataCompletedTasksChart: {
-        data: {
-          labels: ['12am', '3pm', '6pm', '9pm', '12pm', '3am', '6am', '9am'],
-          series: [
-            [230, 750, 450, 300, 280, 240, 200, 190]
-          ]
-        },
-        options: {
-          lineSmooth: this.$chartist.Interpolation.cardinal({
-            tension: 0
-          }),
-          low: 0,
-          high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-          chartPadding: {
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0
-          }
-        }
-      },
-      emailsSubscriptionChart: {
-        data: {
-          labels: ['Ja', 'Fe', 'Ma', 'Ap', 'Mai', 'Ju', 'Jul', 'Au', 'Se', 'Oc', 'No', 'De'],
-          series: [
-            [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
-
-          ]
-        },
-        options: {
-          axisX: {
-            showGrid: false
-          },
-          low: 0,
-          high: 1000,
-          chartPadding: {
-            top: 0,
-            right: 5,
-            bottom: 0,
-            left: 0
-          }
-        },
-        responsiveOptions: [
-          ['screen and (max-width: 768x)', {
-            seriesBarDistance: 5,
-            axisX: {
-              labelInterpolationFnc: function (value) {
-                return value[0]
-              }
-            }
-          }]
+      chartData: {
+        columns: ['日期', '20小时'],
+        rows: [
+          { '日期': '2018-01-15', '20小时': 1500 },
+          { '日期': '2018-01-16', '20小时': 2600 },
+          { '日期': '2018-01-17', '20小时': 5200 * 1.2 },
+          { '日期': '2018-01-18', '20小时': 3500 * 1.2 },
+          { '日期': '2018-01-19', '20小时': 1500 * 1.2 },
+          { '日期': '2018-01-20', '20小时': 2500 },
+          { '日期': '2018-01-21', '20小时': 4900 },
+          { '日期': '2018-01-22', '20小时': 4800 * 0.8 },
+          { '日期': '2018-01-23', '20小时': 6800 * 0.8 },
+          { '日期': '2018-01-24', '20小时': 4500 * 0.8 },
+          { '日期': '2018-01-25', '20小时': 3500 },
+          { '日期': '2018-01-26', '20小时': 2500 },
+          { '日期': '2018-01-27', '20小时': 1500 * 0.5 },
+          { '日期': '2018-01-28', '20小时': 4500 * 0.5 },
+          { '日期': '2018-01-29', '20小时': 6500 * 0.5 },
+          { '日期': '2018-01-30', '20小时': 4500 * 0.5 },
+          { '日期': '2018-02-01', '20小时': 2500 },
+          { '日期': '2018-02-02', '20小时': 1500 },
+          { '日期': '2018-02-03', '20小时': 4500 * 0.3 },
         ]
       },
-      headers: [
-        {
-          sortable: false,
-          text: 'ID',
-          value: 'id'
-        },
-        {
-          sortable: false,
-          text: 'Name',
-          value: 'name'
-        },
-        {
-          sortable: false,
-          text: 'Salary',
-          value: 'salary',
-          align: 'right'
-        },
-        {
-          sortable: false,
-          text: 'Country',
-          value: 'country',
-          align: 'right'
-        },
-        {
-          sortable: false,
-          text: 'City',
-          value: 'city',
-          align: 'right'
-        }
-      ],
-      items: [
-        {
-          name: 'Dakota Rice',
-          country: 'Niger',
-          city: 'Oud-Tunrhout',
-          salary: '$35,738'
-        },
-        {
-          name: 'Minerva Hooper',
-          country: 'Curaçao',
-          city: 'Sinaai-Waas',
-          salary: '$23,738'
-        }, {
-          name: 'Sage Rodriguez',
-          country: 'Netherlands',
-          city: 'Overland Park',
-          salary: '$56,142'
-        }, {
-          name: 'Philip Chanley',
-          country: 'Korea, South',
-          city: 'Gloucester',
-          salary: '$38,735'
-        }, {
-          name: 'Doris Greene',
-          country: 'Malawi',
-          city: 'Feldkirchen in Kārnten',
-          salary: '$63,542'
-        }
-      ],
       tabs: 0,
       list: {
         0: false,

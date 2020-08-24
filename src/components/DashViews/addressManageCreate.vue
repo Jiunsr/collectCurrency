@@ -2,13 +2,12 @@
 	<v-container
 		fluid
 		grid-list-xl 
-		class="applyManageInfoAPI"
+		class="addressManageCreate"
 	>
 	
 		<div class="page-title">
 			<div class="page-item">应用管理</div>
-			<div class="page-item">续费</div>
-			<div class="page-item">支付</div>
+			<div class="page-item">创建新地址</div>
 		</div>
 		<v-layout wrap>
 			<v-flex
@@ -21,51 +20,35 @@
 					<div class="apiTable">
 						<div class="recordCenter">
 							<div class="recordBg"></div>
-							<div class="recordText">支付</div>
+							<div class="recordText">创建新地址</div>
 						</div>
 					</div>
 					<div class="ee"></div>
 					<div class="single">
 						<Form label-position="right" :label-width="170">
-							<FormItem label="订单号：" style="margin-top:50px">
-								<Input></Input>
+							<FormItem label="备注：" style="margin-top:90px">
+								<Input type="textarea" :autosize="{ minRows:3, maxRows:3 }"   placeholder="请输入"></Input>
 							</FormItem>
-							<FormItem label="产品：">
-								<Input></Input>
+							<FormItem label="应用：">
+								<i-select>
+									<Option value="beijing">条目一</Option>
+									<Option value="shanghai">条目二</Option>
+									<Option value="shenzhen">条目三</Option>
+								</i-select>
 							</FormItem>
-							<FormItem label="时长：">
-								<Input></Input>
-							</FormItem>
-							<FormItem label="金额：" :label-width="170">
-								<Input></Input>
-							</FormItem>
-							<FormItem label="支付方式:">
-								<Row>
-									<Col span="8" v-for="(item,index) in payOption" :key="index">
-										<v-btn 
-											width="120" :color="item.key==payActive?'#4f6ef7':'#ffffff'" 
-											:style="{height:'42px', color:item.key==payActive?'':'#333!important' }"
-											@click="payActive=item.key"
-										>
-											<img class="icon mr-2" :src="item.icon">
-											{{item.label}}
-										</v-btn>
-									</Col>
-								</Row>
+							<FormItem label="币种：">
+								<i-select>
+									<Option value="beijing">条目一</Option>
+									<Option value="shanghai">条目二</Option>
+									<Option value="shenzhen">条目三</Option>
+								</i-select>
 							</FormItem>
 						</Form>
 					</div>
-					<div class="theWay">
-						<div class="theWayImg">
-							<img src="./../../assets/img/zhifu_10.png" alt="">
-						</div>
-					</div>
-					<div class="options">
-						<div>USDT支付地址：<span style="color:#4f6ef7;">1LL1KA2Z6Z1XJDPJBIR4B9RH476XKQB1IQ</span></div>
-					</div>
+					<div class="theWay">剩余可创建地址：<span style="color:#4f6ef7;font-weight bold;">1000</span></div>
 					<v-btn 
-						width="150" color="#4f6ef7" 
-						style="height: 35px;margin: 25px auto 40px;display: block;"
+						width="110" color="#4f6ef7" 
+						style="height: 35px;margin: 25px auto 70px;display: block;"
 						@click="toPayPage"
 					>确定</v-btn>
 				</v-card>
@@ -89,6 +72,12 @@ export default {
 				{ key:2, label:'支付宝', icon:alipay },
 				{ key:3, label:'微信', icon:wxpay},
 			],
+			single: false,
+			page: 1,
+			pageCount: 1,
+			itemsPerPage: 10,
+			loading: false,
+			activeStatus: 1,
 		}
 	},
 	methods: {
@@ -99,7 +88,7 @@ export default {
 }
 </script>
 <style lang="stylus">
-.applyManageInfoAPI{
+.addressManageCreate{
 
 	th.bg-blue{
 		color #fff !important
@@ -160,11 +149,11 @@ export default {
 		width 600px
 		margin 0 auto
 		.ivu-input{
-			max-width: 360px;
     		height: 35px;
 		}
 		.icon{
 			border-radius 5px
+			
 		}
 	}
 
@@ -175,16 +164,12 @@ export default {
 	margin-left: 190px;
 	}
 	.theWay{
-		.theWayImg{
-			border 1px solid #f5f5f5
-			border-radius 5px
-			width 180px
-			height 180px
-			display flex
-			justify-content center
-			align-items center
-			margin 10px auto
-		}
+		border-radius 5px
+		display flex
+		justify-content center
+		align-items center
+		margin 90px auto 20px
+
 	}
 }
 	

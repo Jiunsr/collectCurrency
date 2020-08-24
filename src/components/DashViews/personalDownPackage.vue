@@ -1,8 +1,8 @@
 <template>
-    <div class="download-page">
+    <div class="downloadPackage">
         <div class="wallet">
             <div class="walletImg">
-                <img src="./../assets/img/qianbao_03.jpg" alt="">
+                <img src="./../../assets/img/qianbao_03.jpg" alt="">
             </div>
             <div class="walletText">
                 <div class="credible">收币宝<span style="color: black; font-size: 30px;">钱包</span></div>
@@ -26,22 +26,6 @@
                         
             </div>
         </div>
-        <div class="bottom">
-            <div class="bottomCenter">
-                <div class="bottomImg">
-                    <img src="./../assets/img/shouyeioc_03.jpg" alt="">
-                </div>
-                <div class="bottomImg">
-                    <img src="./../assets/img/shouyeioc_05.jpg" alt="">
-                </div>
-                <div class="bottomImg">
-                    <img src="./../assets/img/shouyeioc_07.jpg" alt="">
-                </div>
-            </div>
-            <div class="siteName">
-                <p>© 2020 shoubibao.com</p>
-            </div>
-        </div>
     </div>
 </template>
 
@@ -61,15 +45,17 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.download-page{
+.downloadPackage{
     .wallet{
+        height 900px
         background-color #fff
         display flex
 
         .walletImg{
-            padding 92px 87px 100px 147px
+            padding 92px 87px 156px 147px
             img{
                 width 900px
+                height 675px
             }
         }
         .walletText{
@@ -95,63 +81,6 @@ export default {
                     }
                 }                
             }
-        }
-    }
-}
-.bottom{
-    background-color #000829
-    .bottomCenter{
-        display flex
-        justify-content center
-        align-items center
-        .bottomImg{
-            padding 15px 5px 5px
-            display flex
-            img{
-                width 27px
-                height 27px
-            }
-        }
-    }
-    .siteName{
-        text-align center
-        font-size 12px
-        color #fff
-        padding-bottom 3px
-    }
-}
-@media only screen and (max-width: 1440px){
-    .wallet{
-        .walletImg{
-            padding 70px 70px 150px 80px !important
-            img{
-                width 700px !important
-            }
-        }
-        .walletText{
-            padding-top 170px !important
-            .credible{
-                font-size 40px !important
-            }
-            span{
-                font-size 25px !important
-            }
-            .text{
-                font-size 18px !important
-                padding 20px 0 20px !important
-            }
-        }
-    }
-    .downloadCenter{
-        padding 0 !important 
-        .row{       
-            .downloadOverall{
-                .v-btn{
-                    font-size: 16px !important 
-                    width 170px !important 
-                    height 50px !important 
-                }
-            }   
         }
     }
 }

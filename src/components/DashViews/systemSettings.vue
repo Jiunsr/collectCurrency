@@ -3,6 +3,7 @@
 		fill-height
 		fluid
 		grid-list-xl 
+    class="systemSettings"
 	>
 	
 		<div class="page-title">
@@ -17,45 +18,48 @@
 			>  
 				<v-card class="mx-auto pl-5 pr-5" max-width="100%" :elevation="4">
 					<div class="settings">
-            <Tabs :animated="false">
+            <div class="action" v-if="tabStatus==1">
+              <v-btn width="100" class="mt-4" color="#4f6ef7">添加</v-btn>
+            </div>
+            <Tabs :animated="false" v-model="tabStatus">
                 <TabPane label="参数配置">
                   <div class="parameter">
-                      <Form :model="formRight" :label-width="100">
+                      <Form :label-width="80">
                         <FormItem label="参数1：" style="margin-bottom:15px;margin-top:50px">
                             <Input placeholder="请输入"></Input>
                         </FormItem>
                       </Form>
                   </div>
                   <div class="parameter">
-                      <Form :model="formRight" :label-width="100">
+                      <Form :label-width="80">
                         <FormItem label="参数2：" style="margin-bottom:15px;">
                             <Input placeholder="请输入"></Input>
                         </FormItem>
                       </Form>
                   </div>
                   <div class="parameter">
-                      <Form :model="formRight" :label-width="100">
+                      <Form :label-width="80">
                         <FormItem label="参数3：" style="margin-bottom:15px;">
                             <Input placeholder="请输入"></Input>
                         </FormItem>
                       </Form>
                   </div>
                   <div class="parameter">
-                      <Form :model="formRight" :label-width="100">
+                      <Form :label-width="80">
                         <FormItem label="参数4：" style="margin-bottom:15px;">
                             <Input placeholder="请输入"></Input>
                         </FormItem>
                       </Form>
                   </div>
                   <div class="parameter">
-                      <Form :model="formRight" :label-width="100">
+                      <Form :label-width="80">
                         <FormItem label="参数5：" style="margin-bottom:15px;">
                             <Input placeholder="请输入" style="width 70%"></Input>
                         </FormItem>
                       </Form>
                   </div>
                   <div class="parameter">
-                      <Form :model="formRight" :label-width="100">
+                      <Form :label-width="80">
                         <FormItem label="参数6：" style="margin-bottom:15px;">
                             <Input placeholder="请输入"></Input>
                         </FormItem>
@@ -65,6 +69,9 @@
                 </TabPane>
                 <TabPane label="员工配置">
                   <Table stripe :columns="columns" :data="list" :loading="loading"></Table>
+                  <div class="page-box">
+                    <Page :total="100" :current.sync="current" />
+                  </div>
                 </TabPane>
             </Tabs>
 					</div>
@@ -82,9 +89,11 @@ export default {
 		return {
       value: '',
 			page: 1,
-			pageCount: 1,
+      pageCount: 1,
+      current: 2,
 			itemsPerPage: 10,
-			loading: false,
+      loading: false,
+      tabStatus: 0,
 			list: [
         { number:'18001023040', area1:'管理员', status: 0},
 				{ number:'18001023040', area1:'管理员', status: 0},
@@ -141,10 +150,10 @@ export default {
                       console.warn(value);
                       return true
                     },
-                              render: (h, param) => {
+                    render: (h, param) => {
                       let option = ['正常', '异常'];
-                                  return h('span', {}, option[normal.abnormal])
-                              },
+                        return h('span', {}, option[param.row.status])
+                    },
                 },
                 {
                     title: '操作',
@@ -189,24 +198,41 @@ export default {
 }
 </script>
 <style lang="stylus">
-th.bg-blue{
-	color #fff !important
-	background-color #4F6EF7 !important
-}
-.settings{
-  height 570px
-  .ivu-tabs-bar{
-    margin: 16px 0;
-    border-bottom none;
+.systemSettings{
+  .parameter{
+    max-width 500px
+    margin 0 auto
   }
-  .ivu-tabs-nav{
-    .ivu-tabs-tab-active{
-      color #4f6ef7
+  th.bg-blue{
+    color #fff !important
+    background-color #4F6EF7 !important
+  }
+  .settings{
+    padding-bottom 50px
+    box-sizing border-box
+    .action{
+      position absolute
+      right 20px
+      z-index 99
     }
-  } 
-  .ivu-tabs-nav{
-    .ivu-tabs-ink-bar{
-      background-color: #4f6ef7;
+    &::after{
+      display block
+      content: "";
+      clear both
+    }
+    .ivu-tabs-bar{
+      margin: 16px 0;
+      border-bottom none;
+    }
+    .ivu-tabs-nav{
+      .ivu-tabs-tab-active{
+        color #4f6ef7
+      }
+    } 
+    .ivu-tabs-nav{
+      .ivu-tabs-ink-bar{
+        background-color: #4f6ef7;
+      }
     }
   }
 }
