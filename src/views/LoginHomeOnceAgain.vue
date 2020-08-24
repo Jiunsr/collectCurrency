@@ -15,8 +15,8 @@
 								<v-text-field
 									v-model="pword"
 									:rules="pwRules"
-									label="密码"
-									placeholder="请输入密码"
+									label="验证码"
+									placeholder="请输入验证码"
 									required
 									class="mt-4"
 								></v-text-field>
@@ -106,7 +106,7 @@ export default {
 				v => v.length <= 10 || 'Name must be less than 10 characters',
 			],
 			pwRules: [
-				v => !!v || '请输入密码',
+				v => !!v || '请输入验证码',
 				v => v.length <= 10 || 'Name must be less than 10 characters',
 			],
 			email: '',
