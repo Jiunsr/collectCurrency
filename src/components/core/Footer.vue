@@ -38,7 +38,7 @@ export default {
 </script>
 <style lang="stylus">
 #core-footer {
-  z-index: 0;
+  z-index: 2;
   .footer-items{
     display flex
     flex-direction: column;

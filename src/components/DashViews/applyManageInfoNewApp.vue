@@ -29,23 +29,17 @@
 							<FormItem label="名称：" style="margin-top:30px">
 								<Input placeholder="请输入新应用名称" ></Input>
 							</FormItem>
-							<FormItem label="地址设置：">
-								<Row>
-									<Col span="14">
-										<Input  placeholder="请输入地址设置数量"></Input>
-									</Col>
-									<Col span="4" offset="1">
-										<div class="theAmount"><span style="color:#4f6ef7;font-weight bold;">1000</span>可用</div>
-									</Col>
-									<Col span="4" offset="1">
-										<Checkbox>不限</Checkbox>
-									</Col>
-								</Row>
+							<FormItem label="地址设置：" class="other">
+								<Input  placeholder="请输入地址设置数量"></Input>
+								<div class="locate">
+									<div class="theAmount mr-5"><span style="color:#4f6ef7;font-weight bold;">1000</span>可用</div>
+									<Checkbox>不限</Checkbox>
+								</div>
 							</FormItem>
-							<FormItem label="回调地址">
+							<FormItem label="回调地址：">
 								<Input placeholder="请输入回调地址" ></Input>
 							</FormItem>
-							<FormItem label="币种设置">
+							<FormItem label="币种设置：">
 								<i-select placeholder="请选择币种">
 									<Option value="beijing">New York</Option>
 									<Option value="shanghai">London</Option>
@@ -57,7 +51,7 @@
 					<div class="line2"></div>
 					<div class="information">
 						<Form label-position="right" :label-width="100" inline>
-							<FormItem label="币种名称" class="mr-0">
+							<FormItem label="币种名称：" class="mr-0">
 								<Input  placeholder="请输入"></Input>
 							</FormItem>
 							<FormItem label="入账阈值：" class="mr-0">
@@ -69,7 +63,7 @@
 						</Form>
 						<div class="action-item">
 							<Checkbox>充币允许</Checkbox>
-							<Checkbox style="margin 0 25px 0 0">提币允许</Checkbox>
+							<Checkbox style="mr-5">提币允许</Checkbox>
 							<v-btn width="90" class="mr-0" color="#4f6ef7">添加</v-btn>
 						</div>
 					</div>
@@ -225,7 +219,8 @@ export default {
 		margin 20px 0
 		display flex
 		.ivu-form-inline .ivu-form-item{
-			min-width 400px
+			width 230px
+			max-width 300px
 		}
 		.action-item{
 			flex 1
@@ -245,8 +240,9 @@ export default {
 		margin 0 !important
 	}
 	.nameList{
-	max-width 95%
-	margin 0 auto
+		box-sizing border-box
+		padding 0 20px
+		margin 0 auto
 	}
 }
 	

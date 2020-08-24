@@ -27,6 +27,12 @@
       color: #ff5252 !important;
       caret-color: #ff5252 !important;
   }
+  .v-sheet.v-card:not(.v-sheet--outlined){
+    box-shadow: 0 0 20px rgb(232, 232, 232, .9)!important;
+  }
+  .ivu-form .ivu-form-item-label{
+    color: #000!important;
+  }
   .page-title{
     padding: 5px 20px;
     display: flex;
@@ -61,6 +67,20 @@
       }
     }
   }
+	.other{
+		position: relative;
+		.locate{
+			position: absolute;
+			min-width: 300px;
+			margin-right :-300px;
+			top: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			padding-left: 20px;
+		}
+	}
 </style>
 <script>
 /* eslint-disable */

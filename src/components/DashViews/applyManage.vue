@@ -54,7 +54,9 @@ export default {
                 {
                     title: '名称',
                     key: 'name',
-					minWidth: 250,
+					minWidth: 120,
+					ellipsis: true,
+					tooltip: true,
 					className: "bg-blue",
                     render: (h, param) => {
 						let url = param.row.url || 'i-JDJC43AZ'
@@ -75,7 +77,7 @@ export default {
                 {
                     title: '币种数量',
                     key: 'number',
-					minWidth: 130,
+					minWidth: 100,
 					className: "bg-blue",
 					align:'center'
                 },
@@ -94,14 +96,14 @@ export default {
                 {
                     title: '进账笔数',
                     key: 'payNum1',
-					minWidth: 130,
+					minWidth: 100,
 					className: "bg-blue",
 					align:'center',
                 },
                 {
                     title: '出账笔数',
                     key: 'payNum2',
-					minWidth: 160,
+					minWidth: 100,
 					className: "bg-blue",
 					align:'center',
                 },
@@ -118,7 +120,7 @@ export default {
                 {
                     title: '状态',
                     key: 'status',
-					minWidth: 130,
+					minWidth: 100,
 					className: "bg-blue",
 					align:'center',
 					filters: [

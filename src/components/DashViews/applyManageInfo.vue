@@ -449,7 +449,6 @@ export default {
 		}
 	}
 	.dasText{
-		height 570px
 		.ivu-tabs-bar{
 			margin: 16px 0;
 			border-bottom none;

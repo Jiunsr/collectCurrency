@@ -5,7 +5,7 @@
 		height="90"
 	>
 		<div class="v-toolbar-title">
-			<v-toolbar-title class="font-weight-light text-subtitle-1 pl-8">
+			<v-toolbar-title class="font-weight-light text-subtitle-1 ml-8">
 				<v-btn
 					v-if="responsive"
 					class="default v-btn--simple"
@@ -13,7 +13,7 @@
 					@click.stop="onClickBtn">
 					<v-icon>mdi-view-list</v-icon>
 				</v-btn>
-				{{ title }}
+				<div class="back-home" @click="backHome">首页</div>
 			</v-toolbar-title>
 		</div>
 
@@ -142,6 +142,9 @@ export default {
 		toPage(status){
 			this.$router.push(this.pathAddres[status])
 		},
+		backHome(){
+			this.$router.push('/');
+		},
 	}
 }
 </script>
@@ -150,8 +153,16 @@ export default {
 		text-decoration: none;
 	}
 	#core-toolbar .v-toolbar__content{
-		box-shadow: 0 0 10px #eee;
+		box-shadow: 0 0 20px rgb(232, 232, 232, .9)!important;
 		box-sizing: border-box;
+	}
+	.v-sheet.v-toolbar:not(.v-sheet--outlined){
+		box-shadow: none!important;
+	}
+	.back-home{
+		line-height 45px
+		min-width 45px
+		cursor pointer;
 	}
 	.logout-box{
 		margin-left 40px

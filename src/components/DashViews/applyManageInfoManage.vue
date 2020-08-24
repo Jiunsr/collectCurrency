@@ -35,7 +35,7 @@
 							<FormItem label="创建时间：" style="margin-top:30px">
 								<Input value="2020-08-21" disabled></Input>
 							</FormItem>
-							<FormItem label="到期时间"  class="other">
+							<FormItem label="到期时间："  class="other">
 								<Input value="2020-08-21" disabled placeholder="请输入地址设置数量"></Input>
 								<div class="locate"> 
 									<v-btn width="90" class="mr-0" color="#4f6ef7" height="32" @click="toRenewals()">续费</v-btn>	
@@ -47,14 +47,14 @@
 							<FormItem label="地址设置：" class="other">
 								<Input></Input>
 								<div class="locate">
-									<div class="theAmount">已用：<span style="color:#9d9d9d;font-weight bold;">200;</span></div>
-									<div class="theAmount">可用：<span style="color:#9d9d9d;font-weight bold;">1000;</span></div>
+									<div class="theAmount mr-2">已用：<span style="color:#000;font-weight:bold;">200</span>;</div>
+									<div class="theAmount">可用：<span style="color:#39f;font-weight:bold;">1000</span>;</div>
 								</div>
 							</FormItem>
-							<FormItem label="币种设置">
+							<FormItem label="币种设置：">
 								<Input ></Input>
 							</FormItem>
-							<FormItem label="币种设置">
+							<FormItem label="币种设置：">
 								<i-select placeholder="请选择币种">
 									<Option value="beijing">条目一</Option>
 									<Option value="shanghai">条目二</Option>
@@ -66,7 +66,7 @@
 					<div class="line2"></div>
 					<div class="information">
 						<Form label-position="right" :label-width="100" inline>
-							<FormItem label="币种名称" class="mr-0">
+							<FormItem label="币种名称：" class="mr-0">
 								<Input  placeholder="请输入"></Input>
 							</FormItem>
 							<FormItem label="入账阈值：" class="mr-0">
@@ -238,7 +238,8 @@ export default {
 		margin 20px 0
 		display flex
 		.ivu-form-inline .ivu-form-item{
-			min-width 400px
+			width 230px
+			max-width 300px
 		}
 		.action-item{
 			flex 1

@@ -167,6 +167,8 @@ export default {
 }
 .rge{
 	font-family: Arial, Helvetica, sans-serif;
+	box-sizing border-box
+	padding-bottom 150px
 	.head{
 		padding 0 5%
 		box-sizing border-box

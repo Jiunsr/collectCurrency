@@ -2,7 +2,6 @@
   <v-navigation-drawer
     id="app-drawer"
     v-model="inputValue"
-    app
     dark
     floating
     persistent
@@ -21,7 +20,7 @@
         :dark="false"
       >
         <v-list style="background:#fff;" height="90" class="d-flex justify-center align-center">
-          <v-img :src="logo" height="100%" max-height="42" max-width="92" />
+          <img :src="logo" class="logo"/>
         </v-list>
         <v-list-item
           v-for="(link, i) in links"
@@ -30,10 +29,10 @@
           :active-class="color"
           color="#86a1fe"
         >
-          <v-list-item-action>
-            <v-icon style="color:#fff;">{{ link.icon }}</v-icon>
+          <v-list-item-action class="mr-3">
+            <img :src="link.icon" class="action-icon">
           </v-list-item-action>
-          <v-list-item-action-text style="color:#fff;" v-text="link.text" />
+          <v-list-item-action-text style="color:#fff;font-weight:bold;" v-text="link.text" />
         </v-list-item>
       </v-layout>
     </v-img>
@@ -42,54 +41,50 @@
 
 <script> 
 import { mdiChartBox, mdiCube, mdiMapMarker, mdiDatabaseImport, mdiDatabaseExport, mdiCashUsd, mdiCogBox, mdiLightbulbOn } from '@mdi/js';
-import {
-  mapMutations,
-  mapState
-} from 'vuex'
-
+import { mapMutations, mapState } from 'vuex'
 export default {
   data: () => ({
     logo: require('@/assets/img/shouye_03.png'),
     links: [
       {
         to: '/dashboard/console',
-        icon: mdiChartBox,
+        icon: require('./../../assets/img/tubiao_03.png'),
         text: '概况'
       },
       {
         to: '/dashboard/applyManage',
-        icon: mdiCube,
+        icon: require('./../../assets/img/tubiao_06.png'),
         text: '应用管理'
       },
       {
         to: '/dashboard/addressManage',
-        icon: mdiMapMarker,
+        icon: require('./../../assets/img/tubiao_08.png'),
         text: '地址管理'
       },
       {
         to: '/dashboard/houstonManage',
-        icon: mdiDatabaseImport, 
+        icon: require('./../../assets/img/tubiao_10.png'), 
         text: '进账管理'
       },
   
       {
         to: '/dashboard/outAccountsManage',
-        icon: mdiDatabaseExport,
+        icon: require('./../../assets/img/tubiao_12.png'),
         text: '出账管理'
       },
       {
         to: '/dashboard/financial-affairs',
-        icon: mdiCashUsd,
+        icon: require('./../../assets/img/tubiao_14.png'),
         text: '财务管理'
       },
       {
         to: '/dashboard/systemSettings',
-        icon: mdiCogBox,
+        icon: require('./../../assets/img/tubiao_16.png'),
         text: '系统设置'
       },
       {
         to: '/dashboard/help',
-        icon: mdiLightbulbOn,
+        icon: require('./../../assets/img/tubiao_18.png'),
         text: '帮助中心'
       }
     ],
@@ -130,7 +125,19 @@ export default {
 </script>
 
 <style lang="scss">
+  #app-drawer.v-navigation-drawer{
+    box-shadow: none!important;
+  }
   #app-drawer {
+    .logo{
+      width: 100px;
+      object-fit: cover;
+    }
+    .action-icon{
+      width: 19px;
+      height: 19px;
+      object-fit: cover;
+    }
     .v-list__tile {
       border-radius: 4px;
 
@@ -139,7 +146,6 @@ export default {
         margin-bottom: 17px;
       }
     }
-
     .v-image__image--contain {
       top: 9px;
       height: 60%;
