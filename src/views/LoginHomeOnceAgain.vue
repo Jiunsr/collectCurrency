@@ -215,6 +215,7 @@ html,body {
 .loginHome{
 	font-family: Arial, Helvetica, sans-serif;
 	box-sizing border-box
+	padding-bottom 150px
 	.head{
 		position fixed
 		top 0
